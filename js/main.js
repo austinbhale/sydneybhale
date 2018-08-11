@@ -17,39 +17,9 @@ function fixIOSPlaceholderBug () {
     }
 }
 
-// Adapted from Animate.CSS
-$.fn.extend({
-  animateCss: function(animationName, callback) {
-    var animationEnd = (function(el) {
-      var animations = {
-        animation: 'animationend',
-        OAnimation: 'oAnimationEnd',
-        MozAnimation: 'mozAnimationEnd',
-        WebkitAnimation: 'webkitAnimationEnd',
-      };
-
-      for (var t in animations) {
-        if (el.style[t] !== undefined) {
-          return animations[t];
-        }
-      }
-    })(document.createElement('div'));
-
-    this.addClass('animated ' + animationName).one(animationEnd, function() {
-      $(this).removeClass('animated ' + animationName);
-
-      if (typeof callback === 'function') callback();
-    });
-
-    return this;
-  },
-});
-
 var back = false;
-var rightClicked = false;
-var leftClicked = false;
-var upClicked = false;
-var downClicked = false;
+var rightClicked = false; var leftClicked = false;
+var upClicked = false; var downClicked = false;
 var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 var video;
 
@@ -104,8 +74,7 @@ function setArrowChoice(e) {
           $('#vidcontainer').css("display", "none");
         });
         $('#indexPage').animateCss('slideInUp', function() {
-          helper();
-          
+          helper();   
         });
       } else {
         removeArrows();
@@ -113,12 +82,17 @@ function setArrowChoice(e) {
           x.style.visibility = "hidden";
           $('#arrUp').css("visibility", "visible");
           $('#arrUp').animateCss('fadeIn'); 
+          $('#bio-page').css("display", "block");
+          $('#bio-page').animateCss('fadeIn');
         });
         back = true; home_return = false;
       }
       break;
       case("arrUp"): 
         if (back) {
+          $('#bio-page').animateCss('fadeOut', function() {
+            $('#bio-page').css("display", "none");
+          });
           $('#indexPage').animateCss('slideInDown', function() {helper();});
         } else {
             removeArrows();
@@ -163,5 +137,4 @@ $(document).ready(function(){
     }
 });
 
-// if (isSafari && window.matchMedia("(orientation: portrait)").matches) {
-// }
+// if (isSafari && window.matchMedia("(orientation: portrait)").matches)

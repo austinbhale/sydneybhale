@@ -8,36 +8,72 @@
     <meta name="author" content="Austin Hale">
     <meta name="description" content="Personal site of Sydney Hale">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- Archivo Google Font-->
-    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--Some CSS animations adapted from Daniel Eden:
-        https://github.com/daneden/animate.css/blob/master/LICENSE-->
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="slideshow.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+     <!-- Bootstrap (https://getbootstrap.com)
+    Copyright (c) 2011-2018 Twitter, Inc.
+    Copyright (c) 2011-2018 The Bootstrap Authors
+    MIT License (https://raw.githubusercontent.com/twbs/bootstrap/master/LICENSE)-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">     
+    <!-- Animate.css (https://daneden.github.io/animate.css/)
+    Copyright 2018 Daniel Eden
+    MIT License (https://raw.githubusercontent.com/twbs/bootstrap/v4.1.3/LICENSE)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="main.js" type="text/javascript"></script>
-    <!-- <script src="http://localhost:1337/vorlon.js"></script> -->
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/animate.js" type="text/javascript"></script>
+    <script src="js/slideshow.js" type="text/javascript"></script>
 </head> 
 <body>
   
 <div id="wrapper" style="height: 100%; width: 100%;">
+  <!--Dance reel content-->
   <div id="vidcontainer" class="imgbox" style="display: none">
     <video autoplay controls muted loop playsinline id="myVideo" class="center-fit">
-    <source src="vidtest.mp4" type="video/mp4">
+    <source src="media/vidtest.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
   </div>
+  <!--Portfolio page content-->
   <div id="p-container">
     <div id="portfolios">
-        <a href="Sydney-Hale-Performance-Resume.pdf"><input type="image" src="Sydney-Hale-Performance-Resume-Image.jpg" 
+        <a href="media/Sydney-Hale-Performance-Resume.pdf"><input type="image" src="media/Sydney-Hale-Performance-Resume-Image.jpg" 
         style="height: 40%; width: 25%; margin-top: 100px;"></input></a>
         <div class="divider"></div>
-        <a href="Sydney-Hale-Resume.pdf"><input type="image" src="Sydney-Hale-Resume-Image.jpg" 
+        <a href="media/Sydney-Hale-Resume.pdf"><input type="image" src="media/Sydney-Hale-Resume-Image.jpg" 
         style="height: 40%; width: 25%;"></input></a>
     </div>
   </div>  
+  <!--Picture slideshow content-->
+
+  <!--Biography content-->
+  <div id="bio-page" style="height: 100%; width: 100%; display: none; position: absolute; top: 20%;">
+    <div id="bio-frame">
+      <div id="bio-img" style="height: 50%; width: 50%; float: left;">
+        <img src="media/self0.JPG" alt="Personal" style="border-radius: 50%; height: 100%; width: 100%;">
+      </div>
+      
+      <div id="bio-content" style="width: 50%; height: 70%; float: right;">
+        <p style="color:darkgray">
+          Sydney Hale is a performer, teacher, choreographer, and certified Pilates instructor 
+          currently residing in Brooklyn, New York. In 2018, she graduated Summa Cum Laude with 
+          a B.F.A. in Dance Performance and is now launching her professional career in New York City. 
+          Originally from North Carolina, she found her passion for movement at a young age. 
+          After deciding to pursue a career in dance, she attended the University at Buffalo where 
+          she received extensive training in ballet, tap, jazz, modern, contemporary styles, and more. 
+          With an interest in learning more about movement efficiency and body mechanics, 
+          she proceeded toward earning her Pilates certification to educate others on how to become 
+          their strongest, most confident selves. Whether it be through performing, choreographing, 
+          or teaching, Sydney aims to share herself authentically as both an artist and educator to 
+          empower others and help them discover what makes them feel most alive.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Arrows with descriptions-->
   <div id="arrows">
 
     <button id="arrRight" class="arrowRight" style="position: absolute; right: 1%; bottom: 50%;"></button>
@@ -47,27 +83,16 @@
     </div>
   <div id="indexPage" class="imgbox selectDisable">
   <h2 style="position: absolute; top: 7%; right: 5%; font-family: 'Archivo', sans-serif;">Sydney Hale</h2>
-    <img class="center-fit" id="bg" src="dance1.JPG" style="pointer-events: none"></img>
+    <img class="center-fit" id="bg" src="media/dance1.JPG" style="pointer-events: none"></img>
     <div style="position: absolute; right: 5%; bottom: 3%;">
       <a target="_blank" href="mailto:sbhale@buffalo.edu?subject=Contact">
-      <img src="gmail.png" style="margin: 1px; width: 15px; height: 16px; background-size: contain;"></a>
+      <img src="icons/gmail.png" style="margin: 1px; width: 15px; height: 16px; background-size: contain;"></a>
       <a target="_blank" href="http://www.instagram.com/sydneyhale">
-      <img src="ig-link.png" style="margin: 1px; width: 14px; height: 13px;"></a>
+      <img src="icons/ig-link.png" style="margin: 1px; width: 14px; height: 13px;"></a>
       <a target="_blank" href="http://www.facebook.com/sydney.hale.108">
-      <img src="fb.png" style="margin: 2px; width: 14px; height: 13px;"></a>
+      <img src="icons/fb.png" style="margin: 2px; width: 14px; height: 13px;"></a>
     </div>
   </div>
 </div>
-  <!--Sydney Hale is a performer, teacher, choreographer, and certified Pilates instructor 
-      currently residing in Brooklyn, New York. In 2018, she graduated Summa Cum Laude with 
-      a B.F.A. in Dance Performance and is now launching her professional career in New York City. 
-      Originally from North Carolina, she found her passion for movement at a young age. 
-      After deciding to pursue a career in dance, she attended the University at Buffalo where 
-      she received extensive training in ballet, tap, jazz, modern, contemporary styles, and more. 
-      With an interest in learning more about movement efficiency and body mechanics, 
-      she proceeded toward earning her Pilates certification to educate others on how to become 
-      their strongest, most confident selves. Whether it be through performing, choreographing, 
-      or teaching, Sydney aims to share herself authentically as both an artist and educator to 
-      empower others and help them discover what makes them feel most alive.-->
 </body>
 </html>
