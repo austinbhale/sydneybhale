@@ -2,4 +2,4 @@
 
 ## Personal Website for Sydney Hale
 
-### Learn more about her at www.sydneybhale.com (coming soon)
+### Learn more about her at https://sydneybhale.com/

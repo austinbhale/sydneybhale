@@ -3,6 +3,43 @@ $(document).ready(function() {
       $("#arrUp").css("margin-right", (-($("#arrUp").width())/2));
       $("#arrLeft").css("margin-bottom", (-($("#arrLeft").width())/2));
       $("#arrRight").css("margin-bottom", (-($("#arrRight").width())/2));
+      $("#hdrDown").css("margin-right", ((-($("#hdrDown").width())/2)));
+      $("#hdrUp").css("margin-right", ((-($("#hdrUp").width())/2)));
+      $("#hdrLeft").css("margin-bottom", ((-($("#hdrLeft").width())/2)-5));
+      $("#hdrRight").css("margin-bottom", ((-($("#hdrRight").width())/2)));
+
+      $('#indexPage h3[id^="nameHdr"]').css({"animation-duration": "0.4s", "-vendor-animation-duration": "0.4s"});
+
+      
+      $("#nameHdr0").css("visibility", "visible");
+        $("#nameHdr0").animateCss('rotateInDownRight', function() {
+          $("#nameHdr1").css("visibility", "visible");
+          $("#nameHdr1").animateCss('rotateInDownRight', function() {
+            $("#nameHdr2").css("visibility", "visible");
+            $("#nameHdr2").animateCss('rotateInDownRight', function() {
+              $("#nameHdr3").css("visibility", "visible");
+              $("#nameHdr3").animateCss('rotateInDownRight', function() {
+                $("#nameHdr4").css("visibility", "visible");
+                $("#nameHdr4").animateCss('rotateInDownRight', function() {
+                  $("#nameHdr5").css("visibility", "visible");
+                  $("#nameHdr5").animateCss('rotateInDownRight', function() {
+                    $("#nameHdr6").css("visibility", "visible");
+                    $("#nameHdr6").animateCss('rotateInDownRight', function() {
+                      $("#nameHdr7").css("visibility", "visible");
+                      $("#nameHdr7").animateCss('rotateInDownRight', function() {
+                        $("#nameHdr8").css("visibility", "visible");
+                        $("#nameHdr8").animateCss('rotateInDownRight', function() {
+                          $("#nameHdr9").css("visibility", "visible");
+                          $("#nameHdr9").animateCss('rotateInDownRight');
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
 });
 
 $(window).on("orientationchange", fixIOSPlaceholderBug);
@@ -17,11 +54,10 @@ function fixIOSPlaceholderBug () {
     }
 }
 
-var back = false;
+var video; var back = false;
 var rightClicked = false; var leftClicked = false;
 var upClicked = false; var downClicked = false;
 var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-var video;
 
 window.onload = getUserArrowChoice;
 function getUserArrowChoice() {
@@ -117,7 +153,9 @@ function helper() {
   back = false; home_return = true;
   document.getElementById("indexPage").style.visibility = "visible";
   $('#arrows button[class^="arr"]').css("visibility", "visible");
-  $('#arrows button[class^="arr"]').animateCss('fadeIn'); 
+  $('#arrows h5[id^="hdr"]').css("visibility", "visible");
+  $('#arrows button[class^="arr"]').animateCss('fadeIn');
+  $('#arrows h5[id^="hdr"]').animateCss('fadeIn'); 
 }
 
 function removeArrows() {
@@ -125,13 +163,18 @@ function removeArrows() {
             $("#arrLeft").css("visibility", "hidden");
             $("#arrUp").css("visibility", "hidden");
             $("#arrRight").css("visibility", "hidden");
+            $("#hdrDown").css("visibility", "hidden");
+            $("#hdrLeft").css("visibility", "hidden");
+            $("#hdrUp").css("visibility", "hidden");
+            $("#hdrRight").css("visibility", "hidden");
 }
 
 // Removes autoplay attribute for safari with a width below 800 pixels. 
 $(document).ready(function(){
   var screenWidth = $(window).width();
-    if (isSafari && screenWidth < 800) {
-      $("#myVideo").attr("autoplay");
+    if (screenWidth < 800) {
+      if (isSafari) {$("#myVideo").attr("autoplay");}
+      $('html, body').css('overflowY', 'auto');
     } else {
       $("#myVideo").removeAttr("autoplay");
     }
