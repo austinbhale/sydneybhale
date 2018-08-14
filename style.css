@@ -17,12 +17,6 @@ html, body {
     -vendor-animation-duration: 0.5s;
   }
 
-  /* @media screen and (max-width: 768px) {
-      #vidcontainer {
-          height: 90vh;
-      }
-  } */
-
   #vidcontainer > video {
     display: block;
     position: absolute;
@@ -42,47 +36,6 @@ html, body {
       width: 100%;
     }
   }
-
-/* @media only screen and (-webkit-min-device-pixel-ratio: 1) {
-    ::i-block-chrome, #safariDownArr {
-        background-color: Transparent;
-        background-repeat:no-repeat;
-        border: none;
-        cursor:pointer;
-        overflow: hidden;
-        outline:none;
-        display: block;
-   }
-} */
-
-/* Microsoft Edge will not read % properties for max-height*/
-@supports (-ms-ime-align:auto) {
-    @media screen and (max-height: 600px) {
-        #bg {
-            max-height: 550px !important;
-        }
-    }
-    @media screen and (min-height: 600px) {
-        #bg {
-            max-height: 600px !important;
-        }
-    }
-    @media screen and (min-height: 652px) {
-        #bg {
-            max-height: 650px !important;
-        }
-    }
-    @media screen and (min-height: 702px) {
-        #bg {
-            max-height: 700px !important;
-        }
-    }
-    @media screen and (min-height: 750px) {
-        #bg {
-            max-height: 748px !important;
-        }
-    }
-}
 
 /* TODO */
 #wrapper {

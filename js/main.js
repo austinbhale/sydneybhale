@@ -8,7 +8,7 @@ $(document).ready(function() {
       $("#hdrLeft").css("margin-bottom", ((-($("#hdrLeft").width())/2)-5));
       $("#hdrRight").css("margin-bottom", ((-($("#hdrRight").width())/2)));
 
-      $('#indexPage h3[id^="nameHdr"]').css({"animation-duration": "0.4s", "-vendor-animation-duration": "0.4s"});
+      $('#indexPage h3[id^="nameHdr"]').css({"animation-duration": "0.3s", "-vendor-animation-duration": "0.3s"});
       
       $("#nameHdr0").css("visibility", "visible");
         $("#nameHdr0").animateCss('rotateInDownRight', function() {
@@ -39,6 +39,10 @@ $(document).ready(function() {
             });
           });
         });
+
+        if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+          $('#bg').css("max-height", window.innerHeight+"px");
+        }
 });
 
 $(window).on("orientationchange", fixIOSPlaceholderBug);
@@ -153,19 +157,16 @@ function helper() {
   document.getElementById("indexPage").style.visibility = "visible";
   $('#arrows button[class^="arr"]').css("visibility", "visible");
   $('#arrows h5[id^="hdr"]').css("visibility", "visible");
+  $('#indexPage h3[id^="nameHdr"]').css("visibility", "visible");
   $('#arrows button[class^="arr"]').animateCss('fadeIn');
   $('#arrows h5[id^="hdr"]').animateCss('fadeIn'); 
+  $('#indexPage h3[id^="nameHdr"]').animateCss('fadeIn');
 }
 
 function removeArrows() {
-            $("#arrDown").css("visibility", "hidden");
-            $("#arrLeft").css("visibility", "hidden");
-            $("#arrUp").css("visibility", "hidden");
-            $("#arrRight").css("visibility", "hidden");
-            $("#hdrDown").css("visibility", "hidden");
-            $("#hdrLeft").css("visibility", "hidden");
-            $("#hdrUp").css("visibility", "hidden");
-            $("#hdrRight").css("visibility", "hidden");
+            $('#arrows button[class^="arr"]').css("visibility", "hidden");
+            $('#arrows h5[id^="hdr"]').css("visibility", "hidden");
+            $('#indexPage h3[id^="nameHdr"]').css("visibility", "hidden");
 }
 
 // Removes autoplay attribute for safari with a width below 800 pixels. 
@@ -180,3 +181,7 @@ $(document).ready(function(){
 });
 
 // if (isSafari && window.matchMedia("(orientation: portrait)").matches)
+if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+  var h = window.innerHeight;
+  $('#bg').css("max-height", ""+h);
+}
