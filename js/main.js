@@ -9,7 +9,6 @@ $(document).ready(function() {
       $("#hdrRight").css("margin-bottom", ((-($("#hdrRight").width())/2)));
 
       $('#indexPage h3[id^="nameHdr"]').css({"animation-duration": "0.4s", "-vendor-animation-duration": "0.4s"});
-
       
       $("#nameHdr0").css("visibility", "visible");
         $("#nameHdr0").animateCss('rotateInDownRight', function() {
