@@ -1,4 +1,4 @@
-# dance-client-website
+# sydneybhale
 
 ## Personal Website for Sydney Hale
 
