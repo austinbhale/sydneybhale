@@ -48,38 +48,53 @@
 
     <!-- Full-width images with number text -->
     <div class="mySlides">
-      <div class="numbertext">1 / 7</div>
+      <div class="numbertext">1 / 10</div>
         <img class="center-slide" src="media/dance0.jpg">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">2 / 7</div>
+      <div class="numbertext">2 / 10</div>
+        <img class="center-slide" src="media/dance2.JPG">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 10</div>
         <img class="center-slide" src="media/dance3.JPG">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">3 / 7</div>
+      <div class="numbertext">4 / 10</div>
+        <img class="center-slide" src="media/dance4.JPG">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 10</div>
         <img class="center-slide" src="media/dance5.JPG">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">4 / 7</div>
+      <div class="numbertext">6 / 10</div>
         <img class="center-slide" src="media/dance6.JPG">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">5 / 7</div>
+      <div class="numbertext">7 / 10</div>
         <img class="center-slide" src="media/dance7.JPG">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">6 / 7</div>
-        <img class="center-slide" src="media/self0.JPG">
+      <div class="numbertext">8 / 10</div>
+        <img class="center-slide" src="media/dance8.JPG">
     </div>
 
     <div class="mySlides">
-      <div class="numbertext">7 / 7</div>
-        <img class="center-slide" src="media/dance7.JPG">
+      <div class="numbertext">9 / 10</div>
+        <img class="center-slide" src="media/self1.JPG">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">10 / 10</div>
+        <img class="center-slide" src="media/self2.JPG">
     </div>
 
     <!-- Next and previous buttons -->
@@ -87,32 +102,41 @@
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
     <!-- Image text -->
-    <div class="caption-container">
+    <!-- <div class="caption-container">
       <p id="caption"></p>
-    </div>
+    </div> -->
 
     <!-- Thumbnail images -->
     <div class="row">
-      <div class="column">
-        <img class="demo cursor" src="media/dance0.jpg" style="width:100%" onclick="currentSlide(1)" alt="Dance Caption">
+      <div class="column" id="column0">
+        <img id="base-img" class="demo cursor" src="media/dance0.jpg" style="width: 100%" onclick="currentSlide(1)" alt="Dance Caption">
       </div>
-      <div class="column"> 
-        <img class="demo cursor" src="media/dance3.JPG" style="width:100%" onclick="currentSlide(2)" alt="Dance1 Caption">
+      <div class="column" id="column1"> 
+        <img id="tall-img0" class="demo cursor" src="media/dance2.JPG" style="width:100%;" onclick="currentSlide(2)" alt="Dance1 Caption">
       </div>
-      <div class="column">
-        <img class="demo cursor" src="media/dance5.JPG" style="width:100%" onclick="currentSlide(3)" alt="Dance2 Caption">
+      <div class="column" id="column2">
+        <img class="demo cursor" src="media/dance3.JPG" style="width:100%" onclick="currentSlide(3)" alt="Dance2 Caption">
       </div>
-      <div class="column">
-        <img class="demo cursor" src="media/dance6.JPG" style="width:100%" onclick="currentSlide(4)" alt="Dance3 Caption">
+      <div class="column" id="column3">
+        <img id="tall-img1" class="demo cursor" src="media/dance4.JPG" style="width:100%" onclick="currentSlide(4)" alt="Dance3 Caption">
       </div>
-      <div class="column">
-        <img class="demo cursor" src="media/dance7.JPG" style="width:100%" onclick="currentSlide(5)" alt="Dance4 Caption">
+      <div class="column" id="column4">
+        <img class="demo cursor" src="media/dance5.JPG" style="width:100%" onclick="currentSlide(5)" alt="Dance4 Caption">
       </div> 
-      <div class="column">
-        <img class="demo cursor" src="media/self0.JPG" style="width:100%" onclick="currentSlide(6)" alt="Dance5 Caption">
+      <div class="column" id="column5">
+        <img class="demo cursor" src="media/dance6.JPG" style="width:100%" onclick="currentSlide(6)" alt="Dance5 Caption">
       </div>
-      <div class="column">
+      <div class="column" id="column6">
         <img class="demo cursor" src="media/dance7.JPG" style="width:100%" onclick="currentSlide(7)" alt="Dance6 Caption">
+      </div>
+      <div class="column" id="column7">
+        <img id="tall-img2" class="demo cursor" src="media/dance8.JPG" style="width:100%" onclick="currentSlide(8)" alt="Dance7 Caption">
+      </div>
+      <div class="column" id="column8">
+        <img id="tall-img3" class="demo cursor" src="media/self1.JPG" style="width:100%" onclick="currentSlide(9)" alt="Dance8 Caption">
+      </div>
+      <div class="column" id="column9">
+        <img id="tall-img4" class="demo cursor" src="media/self2.JPG" style="width:100%" onclick="currentSlide(10)" alt="Dance9 Caption">
       </div>
     </div>
   </div>
@@ -142,7 +166,7 @@
   </div>
   <!--Arrows with descriptions-->
   <div id="arrows">
-    <button id="arrRight" class="arrowRight" style="position: absolute; right: 1%; bottom: 50%;"></button>
+    <button id="arrRight" class="arrowRight" style="position: absolute; right: 1.3%; bottom: 50%;"></button>
     <button id="arrDown" class="arrowDown" style="position: absolute; right: 50%; bottom: 1%;"></button>
     <button id="arrLeft" class="arrowLeft" style="position: absolute; left: 1%; bottom: 50%; "></button>
     <button id="arrUp" class="arrowUp" style="position: absolute; right: 50%; top: 1%;"></button>
