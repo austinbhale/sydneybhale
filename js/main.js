@@ -106,8 +106,10 @@ function setArrowChoice(e) {
           $('#arrRight').css("visibility", "visible");
           $('#arrRight').animateCss('fadeIn');
           $('#slideshow').css("display", "block");
+          resizeCol();          
           $('#slideshow').animateCss('fadeIn');
         });
+
         back = true; home_return = false;
       }
       break;
@@ -179,7 +181,7 @@ $(document).ready(function(){
   var screenWidth = $(window).width();
     if (screenWidth < 800 && isSafari) {
         $("#myVideo").attr("autoplay");
-        $('html, body').css('overflowY', 'auto');
+        // $('html, body').css('overflowY', 'auto');
     } else {
       $("#myVideo").removeAttr("autoplay");
     }
@@ -217,9 +219,19 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  if (slides[slideIndex-1] !== null) {
+
     slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
+    dots[slideIndex-1].className += " active";  
+}
+
+// Crop column height based on screen size change.
+$(window).on('resize', function(){
+  resizeCol();
+});
+  
+function resizeCol() {
+  var crop = $("#base-img").height();
+  for (var i=0; i<10; i++) {
+    $("#column"+i).css('height',crop+'px');
   }
 }

@@ -39,7 +39,7 @@ html, body {
 
 /* TODO */
 #wrapper {
-    /* background-image: url(self0.JPG);
+    /* background-image: url(self0.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center; */
@@ -197,7 +197,7 @@ html, body {
   /* Hide the images by default */
   .mySlides {
     display: none;
-    height: 75%;
+    height: 80%;
     max-width: 100%;
     text-align: center;
   }
@@ -245,24 +245,18 @@ html, body {
     top: 0;
   }
   
-  /* Container for image text */
-  .caption-container {
-    text-align: center;
-    background-color: #222;
-    padding: 2px 16px;
-    color: white;
-  }
-  
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
   
-  /* Six columns side by side */
+  /* Columns side by side */
   .column {
+    border-top: 2px solid darkgray;
     float: left;
-    width: 14.28%;
+    overflow: hidden;
+    width: 8.33%;
   }
   
   /* Add a transparency effect for thumnbail images */
