@@ -132,6 +132,44 @@ html, body {
     outline: none;
 }
 
+#hdrRight {
+    color: rgba(245, 114, 114, 0.753); 
+    font-family: URW Chancery L, cursive;
+    position: absolute; 
+    right: 2%; 
+    bottom: 54%; 
+    transform: rotate(90deg); 
+    -webkit-transform: rotate(90deg); 
+    -moz-transform: rotate(90deg);
+}
+
+#hdrDown {
+    color: rgb(245, 114, 114, 0.753); 
+    font-family: URW Chancery L, cursive;
+    position: absolute; 
+    right: 50%; 
+    bottom: 4%;
+}
+
+#hdrLeft {
+    color: rgb(245, 114, 114, 0.753);
+    font-family: URW Chancery L, cursive; 
+    position: absolute; 
+    left: 2.5%; 
+    bottom: 54%; 
+    transform: rotate(-90deg); 
+    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg);
+}
+
+#hdrUp {
+    color: rgb(245, 114, 114, 0.753); 
+    font-family: URW Chancery L, cursive;
+    position: absolute; 
+    right: 50%; 
+    top: 4%;
+}
+
 @media only screen and (min-width: 769px) {
     .arrowRight:hover {
         border-top: 4px solid rgb(226, 219, 219);
@@ -186,18 +224,32 @@ html, body {
     transition: all .4s ease-in-out;
     height: 65%; 
     width: 35%; 
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
+@media only screen and (min-width: 729px) {
+    #p-resume, #resume {
+        opacity: 0.6;
+    }
 
-#p-resume:hover {
-    -ms-transform: scale(1.2); /* IE 9 */
-    -webkit-transform: scale(1.2); /* Safari 3-8 */
-    transform: scale(1.2); 
+    #p-resume:hover {
+        -ms-transform: scale(1.2); /* IE 9 */
+        -webkit-transform: scale(1.2); /* Safari 3-8 */
+        transform: scale(1.2); 
+        opacity: 1.0;
+    }
+    
+    #resume:hover {
+        -ms-transform: scale(1.2); /* IE 9 */
+        -webkit-transform: scale(1.2); /* Safari 3-8 */
+        transform: scale(1.2); 
+        opacity: 1.0;
+    }
 }
 
-#resume:hover {
-    -ms-transform: scale(1.2); /* IE 9 */
-    -webkit-transform: scale(1.2); /* Safari 3-8 */
-    transform: scale(1.2); 
+@media only screen and (max-width: 729px) {
+    #p-resume, #resume {
+        margin-top: 30%;
+        height: 50%;
+    }
 }

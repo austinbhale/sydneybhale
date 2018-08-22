@@ -1,3 +1,5 @@
+var back = false; var ready = false;
+
 $(document).ready(function() {
       $("#arrDown").css("margin-right", (-($("#arrDown").width())/2));
       $("#arrUp").css("margin-right", (-($("#arrUp").width())/2));
@@ -9,27 +11,29 @@ $(document).ready(function() {
       $("#hdrRight").css("margin-bottom", ((-($("#hdrRight").width())/2)));
 
       $('#indexPage h3[id^="nameHdr"]').css({"animation-duration": "0.2s", "-vendor-animation-duration": "0.3s"});
-      
+
       $("#nameHdr0").css("visibility", "visible");
-        $("#nameHdr0").animateCss('rotateInDownRight', function() {
-          $("#nameHdr1").css("visibility", "visible");
-          $("#nameHdr1").animateCss('rotateInDownRight', function() {
-            $("#nameHdr2").css("visibility", "visible");
-            $("#nameHdr2").animateCss('rotateInDownRight', function() {
-              $("#nameHdr3").css("visibility", "visible");
-              $("#nameHdr3").animateCss('rotateInDownRight', function() {
-                $("#nameHdr4").css("visibility", "visible");
-                $("#nameHdr4").animateCss('rotateInDownRight', function() {
-                  $("#nameHdr5").css("visibility", "visible");
-                  $("#nameHdr5").animateCss('rotateInDownRight', function() {
-                    $("#nameHdr6").css("visibility", "visible");
-                    $("#nameHdr6").animateCss('rotateInDownRight', function() {
-                      $("#nameHdr7").css("visibility", "visible");
-                      $("#nameHdr7").animateCss('rotateInDownRight', function() {
-                        $("#nameHdr8").css("visibility", "visible");
-                        $("#nameHdr8").animateCss('rotateInDownRight', function() {
-                          $("#nameHdr9").css("visibility", "visible");
-                          $("#nameHdr9").animateCss('rotateInDownRight');
+          $("#nameHdr0").animateCss('rotateInDownRight', function() {
+            $("#nameHdr1").css("visibility", "visible");
+            $("#nameHdr1").animateCss('rotateInDownRight', function() {
+              $("#nameHdr2").css("visibility", "visible");
+              $("#nameHdr2").animateCss('rotateInDownRight', function() {
+                $("#nameHdr3").css("visibility", "visible");
+                $("#nameHdr3").animateCss('rotateInDownRight', function() {
+                  $("#nameHdr4").css("visibility", "visible");
+                  $("#nameHdr4").animateCss('rotateInDownRight', function() {
+                    $("#nameHdr5").css("visibility", "visible");
+                    $("#nameHdr5").animateCss('rotateInDownRight', function() {
+                      $("#nameHdr6").css("visibility", "visible");
+                      $("#nameHdr6").animateCss('rotateInDownRight', function() {
+                        $("#nameHdr7").css("visibility", "visible");
+                        $("#nameHdr7").animateCss('rotateInDownRight', function() {
+                          $("#nameHdr8").css("visibility", "visible");
+                          $("#nameHdr8").animateCss('rotateInDownRight', function() {
+                            $("#nameHdr9").css("visibility", "visible");
+                            $("#nameHdr9").animateCss('rotateInDownRight');
+                            ready = true;
+                          });
                         });
                       });
                     });
@@ -38,8 +42,7 @@ $(document).ready(function() {
               });
             });
           });
-        });
-
+        
         if (document.documentMode || /Edge/.test(navigator.userAgent)) {
           $('#bg').css("max-height", window.innerHeight+"px");
         }
@@ -57,7 +60,7 @@ function fixIOSPlaceholderBug () {
     }
 }
 
-var video; var back = false;
+var video;
 var rightClicked = false; var leftClicked = false;
 var upClicked = false; var downClicked = false;
 var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
@@ -69,7 +72,7 @@ function getUserArrowChoice() {
 }
 
 function setArrowChoice(e) {
-  if (e.target.tagName == 'BUTTON') {
+  if (e.target.tagName == 'BUTTON' && ready) {
 
     var x = document.getElementById("indexPage");
 
@@ -179,12 +182,8 @@ function removeArrows() {
 // Removes autoplay attribute for safari with a width below 800 pixels. 
 $(document).ready(function(){
   var screenWidth = $(window).width();
-    if (screenWidth < 800 && isSafari) {
-        $("#myVideo").attr("autoplay");
-        // $('html, body').css('overflowY', 'auto');
-    } else {
-      $("#myVideo").removeAttr("autoplay");
-    }
+  (screenWidth < 800 && isSafari) ? $("#myVideo").attr("autoplay") : $("#myVideo").removeAttr("autoplay");
+  (screenWidth < 600) ? $("#hdrLeft").css("left", "4%") : $("#hdrLeft").css("left", "2.5%");
 });
 
 // if (isSafari && window.matchMedia("(orientation: portrait)").matches)
@@ -225,6 +224,7 @@ function showSlides(n) {
 // Crop column height based on screen size change.
 $(window).on('resize', function(){
   resizeCol();
+  ($(window).width() < 700) ? $("#hdrLeft").css("left", "4%") : $("#hdrLeft").css("left", "2.5%");
 });
   
 function resizeCol() {
