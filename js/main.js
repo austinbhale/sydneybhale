@@ -231,7 +231,7 @@ $(window).on('resize', function(){
   
 function resizeCol() {
   var crop = $("#base-img").height();
-  for (var i=0; i<10; i++) {
+  for (var i=0; i<12; i++) {
     $("#column"+i).css('height',crop+'px');
   }
 }
