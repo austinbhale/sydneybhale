@@ -247,7 +247,7 @@ html, body {
     }
 }
 
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 425px) {
     #p-resume, #resume {
         margin-top: 30%;
         height: 50%;
