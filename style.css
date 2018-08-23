@@ -253,7 +253,7 @@ html, body {
         height: 50%;
     }
 
-    #bio-img, #br {
+    #bio-img, #br0, #br1 {
         display: none;
     }
 }
