@@ -257,3 +257,9 @@ html, body {
         display: none;
     }
 }
+
+@media (min-height: 531px) and (min-width: 618px) {
+    #bio-img, #br0, #br1 {
+        display: none;
+    }
+}
