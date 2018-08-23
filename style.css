@@ -258,7 +258,7 @@ html, body {
     }
 }
 
-@media (min-height: 531px) and (min-width: 618px) {
+@media (max-height: 531px) and (max-width: 618px) {
     #bio-img, #br0, #br1 {
         display: none;
     }
