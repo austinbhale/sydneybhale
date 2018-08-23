@@ -7,9 +7,6 @@ $(document).ready(function() {
       $("#arrRight").css("margin-bottom", (-($("#arrRight").width())/2));
       $("#hdrDown").css("margin-right", ((-($("#hdrDown").width())/2)));
       $("#hdrUp").css("margin-right", ((-($("#hdrUp").width())/2)));
-      $("#hdrLeft").css("margin-bottom", ((-($("#hdrLeft").width())/2)-5));
-      $("#hdrRight").css("margin-bottom", ((-($("#hdrRight").width())/2)));
-
       $('#indexPage h3[id^="nameHdr"]').css({"animation-duration": "0.2s", "-vendor-animation-duration": "0.3s"});
 
       $("#nameHdr0").css("visibility", "visible");
@@ -183,7 +180,7 @@ function removeArrows() {
 $(document).ready(function(){
   var screenWidth = $(window).width();
   (screenWidth < 800 && isSafari) ? $("#myVideo").attr("autoplay") : $("#myVideo").removeAttr("autoplay");
-  (screenWidth < 600) ? $("#hdrLeft").css("left", "4%") : $("#hdrLeft").css("left", "2.5%");
+  if (screenWidth < 600) {$("#hdrLeft").css("left", "4%")};
 });
 
 // if (isSafari && window.matchMedia("(orientation: portrait)").matches)
