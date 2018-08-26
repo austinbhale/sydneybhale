@@ -7,38 +7,11 @@ $(document).ready(function() {
       $("#arrRight").css("margin-bottom", (-($("#arrRight").width())/2));
       $("#hdrDown").css("margin-right", ((-($("#hdrDown").width())/2)));
       $("#hdrUp").css("margin-right", ((-($("#hdrUp").width())/2)));
-      $('#indexPage h3[id^="nameHdr"]').css({"animation-duration": "0.2s", "-vendor-animation-duration": "0.3s"});
 
       $("#nameHdr0").css("visibility", "visible");
-          $("#nameHdr0").animateCss('rotateInDownRight', function() {
-            $("#nameHdr1").css("visibility", "visible");
-            $("#nameHdr1").animateCss('rotateInDownRight', function() {
-              $("#nameHdr2").css("visibility", "visible");
-              $("#nameHdr2").animateCss('rotateInDownRight', function() {
-                $("#nameHdr3").css("visibility", "visible");
-                $("#nameHdr3").animateCss('rotateInDownRight', function() {
-                  $("#nameHdr4").css("visibility", "visible");
-                  $("#nameHdr4").animateCss('rotateInDownRight', function() {
-                    $("#nameHdr5").css("visibility", "visible");
-                    $("#nameHdr5").animateCss('rotateInDownRight', function() {
-                      $("#nameHdr6").css("visibility", "visible");
-                      $("#nameHdr6").animateCss('rotateInDownRight', function() {
-                        $("#nameHdr7").css("visibility", "visible");
-                        $("#nameHdr7").animateCss('rotateInDownRight', function() {
-                          $("#nameHdr8").css("visibility", "visible");
-                          $("#nameHdr8").animateCss('rotateInDownRight', function() {
-                            $("#nameHdr9").css("visibility", "visible");
-                            $("#nameHdr9").animateCss('rotateInDownRight');
-                            ready = true;
-                          });
-                        });
-                      });
-                    });
-                  });
-                });
-              });
-            });
-          });
+        $("#nameHdr0").animateCss('zoomIn', function() {
+          ready = true;
+        });
         
         if (document.documentMode || /Edge/.test(navigator.userAgent)) {
           $('#bg').css("max-height", window.innerHeight+"px");

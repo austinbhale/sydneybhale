@@ -37,12 +37,7 @@ html, body {
     }
   }
 
-/* TODO */
 #wrapper {
-    /* background-image: url(self0.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center; */
     background-color: black;
 }
 
@@ -133,38 +128,38 @@ html, body {
 }
 
 #hdrRight {
-    color: rgb(211, 110, 110); 
-    font-family: URW Chancery L, cursive;
+    color: #c9dfd3; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute; 
     right: 2%; 
-    bottom: 48%; 
+    bottom: 47%; 
     transform: rotate(90deg); 
     -webkit-transform: rotate(90deg); 
     -moz-transform: rotate(90deg);
 }
 
 #hdrDown {
-    color: rgb(211, 110, 110); 
-    font-family: URW Chancery L, cursive;
+    color: #c9dfd3; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute; 
     right: 50%; 
     bottom: 4%;
 }
 
 #hdrLeft {
-    color: rgb(211, 110, 110);
-    font-family: URW Chancery L, cursive; 
+    color: #c9dfd3;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
     position: absolute; 
     left: 2.5%; 
-    bottom: 48%; 
+    top: 47%; 
     transform: rotate(-90deg); 
     -webkit-transform: rotate(-90deg); 
     -moz-transform: rotate(-90deg);
 }
 
 #hdrUp {
-    color: rgb(211, 110, 110); 
-    font-family: URW Chancery L, cursive;
+    color: #c9dfd3; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute; 
     right: 50%; 
     top: 4%;
