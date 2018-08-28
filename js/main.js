@@ -8,8 +8,8 @@ $(document).ready(function() {
       $("#hdrDown").css("margin-right", ((-($("#hdrDown").width())/2)));
       $("#hdrUp").css("margin-right", ((-($("#hdrUp").width())/2)));
 
-      $("#nameHdr0").css("visibility", "visible");
-        $("#nameHdr0").animateCss('zoomIn', function() {
+      $("#nameHdr").css("visibility", "visible");
+        $("#nameHdr").animateCss('zoomIn', function() {
           ready = true;
         });
         
@@ -52,9 +52,10 @@ function setArrowChoice(e) {
         if (back) {
           $('#slideshow').animateCss('fadeOut', function() {
             $('#slideshow').css("display", "none");
-          });
-          $('#indexPage').animateCss('slideInRight', function() {helper();});
+            $('#indexPage').animateCss('slideInRight', function() {helper();});
+          });   
         } else {
+          $('#wrapper').css("background-color", "#c9dfd3");
           removeArrows();
           $('#indexPage').animateCss('slideOutLeft', function() {
             x.style.visibility = "hidden";
@@ -68,11 +69,12 @@ function setArrowChoice(e) {
       break;
       case ("arrLeft"):
       if (back) {
-        $('#p-container').animateCss('fadeOut', function() {
+        $('#indexPage').animateCss('slideInLeft', function() {
           $('#p-container').css("display", "none");
+          helper();
         });
-        $('#indexPage').animateCss('slideInLeft', function() {helper();});
       } else {
+        $('#wrapper').css("background-color", "black");
         removeArrows();
         $('#indexPage').animateCss('slideOutRight', function() {
           x.style.visibility = "hidden";
@@ -96,6 +98,7 @@ function setArrowChoice(e) {
           helper();   
         });
       } else {
+        $('#wrapper').css("background-color", "#c9dfd3");
         removeArrows();
         $('#indexPage').animateCss('slideOutUp', function() {
           x.style.visibility = "hidden";
@@ -114,6 +117,7 @@ function setArrowChoice(e) {
           });
           $('#indexPage').animateCss('slideInDown', function() {helper();});
         } else {
+          $('#wrapper').css("background-color", "black");
             removeArrows();
             $('#indexPage').animateCss('slideOutDown', function() {    
                 x.style.visibility = "hidden";
@@ -124,7 +128,7 @@ function setArrowChoice(e) {
                 video.play();
             });
           back = true; home_return = false;
-        }  
+        }
         break;
       default: break;
     }
@@ -137,20 +141,40 @@ function helper() {
   document.getElementById("indexPage").style.visibility = "visible";
   $('#arrows button[class^="arr"]').css("visibility", "visible");
   $('#arrows h5[id^="hdr"]').css("visibility", "visible");
-  $('#indexPage h3[id^="nameHdr"]').css("visibility", "visible");
+  $('#nameHdr').css("visibility", "visible");
   $('#arrows button[class^="arr"]').animateCss('fadeIn');
   $('#arrows h5[id^="hdr"]').animateCss('fadeIn'); 
-  $('#indexPage h3[id^="nameHdr"]').animateCss('fadeIn');
+  $('#nameHdr').animateCss('fadeIn');
 }
 
 function removeArrows() {
             $('#arrows button[class^="arr"]').css("visibility", "hidden");
             $('#arrows h5[id^="hdr"]').css("visibility", "hidden");
-            $('#indexPage h3[id^="nameHdr"]').css("visibility", "hidden");
+            $('#nameHdr').css("visibility", "hidden");
 }
 
 // Removes autoplay attribute for safari with a width below 800 pixels. 
 $(document).ready(function(){
+  var slide_num = 0;
+  setInterval(function(){ 
+      if (slide_num == 0) { 
+        
+        $('#bg').animateCss('rotateOutUpLeft', function() {
+          $('#bg').css("display", "none");
+          $('#bg1').css("display", "block");
+          $('#bg1').animateCss('rotateInUpLeft');
+        });
+        slide_num = 1;
+      } else {
+        $('#bg1').animateCss('rotateOutUpLeft', function() {
+          $('#bg1').css("display", "none");
+          $('#bg').css("display", "block");
+          $('#bg').animateCss('rotateInUpLeft');
+        });
+        slide_num = 0;
+      }
+}, 7000);
+
   var screenWidth = $(window).width();
   (screenWidth < 800 && isSafari) ? $("#myVideo").attr("autoplay") : $("#myVideo").removeAttr("autoplay");
   if (screenWidth < 600) {$("#hdrLeft").css("left", "4%")};

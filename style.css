@@ -7,6 +7,22 @@ html, body {
     position: relative;
 }
 
+#bg, #bg1 {
+    animation-duration: 1s;
+    -vendor-animation-duration: 1s;
+}
+
+#nameHdr {
+    visibility: hidden; 
+    position: absolute; 
+    top: 10%; 
+    right: 10%; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    color: #a3a2a3;
+    animation-duration: 1.5s;
+    -vendor-animation-duration: 1.5s;
+}
+
 #vidcontainer {
     position: absolute;
     top: 0;
@@ -15,6 +31,7 @@ html, body {
     height: 90vh;
     animation-duration: 0.5s;
     -vendor-animation-duration: 0.5s;
+    background-color: black;
   }
 
   #vidcontainer > video {
@@ -38,7 +55,7 @@ html, body {
   }
 
 #wrapper {
-    background-color: black;
+    background-color: #c9dfd3;
 }
 
 * {
@@ -57,8 +74,9 @@ html, body {
 #indexPage {
     /* animation-delay: 0.2s;
     -vendor-animation-delay: 0.2s; */
-    animation-duration: 2s;
-    -vendor-animation-duration: 2s;
+    background-color: black;
+    /* animation-duration: 2s;
+    -vendor-animation-duration: 2s; */
 }
    
 .center-fit {
@@ -128,7 +146,7 @@ html, body {
 }
 
 #hdrRight {
-    color: #c9dfd3; 
+    color: #a3a2a3; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute; 
     right: 2%; 
@@ -139,7 +157,7 @@ html, body {
 }
 
 #hdrDown {
-    color: #c9dfd3; 
+    color: #a3a2a3; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute; 
     right: 50%; 
@@ -147,7 +165,7 @@ html, body {
 }
 
 #hdrLeft {
-    color: #c9dfd3;
+    color: #a3a2a3;
     font-family: Georgia, 'Times New Roman', Times, serif; 
     position: absolute; 
     left: 2.5%; 
@@ -158,7 +176,7 @@ html, body {
 }
 
 #hdrUp {
-    color: #c9dfd3; 
+    color: #a3a2a3; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute; 
     right: 50%; 
@@ -217,27 +235,49 @@ html, body {
 
 #p-resume, #resume {
     transition: all .4s ease-in-out;
+    text-align: center;
     height: 65%; 
     width: 35%; 
-    margin-top: 10%;
+    margin-top: 7%;
+}
+
+#p-hdr, #p-hdrLow {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}
+
+#bio-img {
+    width: 30%; 
+    float: left; 
+    margin-right: 2%; 
+    border-radius: 50%;
+    margin-bottom: 5%;
+}
+
+#bio-words {
+    text-align: left; 
+    color:black; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    float: right;
+    font-size: 2.7vh;
 }
 
 @media only screen and (min-width: 729px) {
     #p-resume, #resume {
-        opacity: 0.6;
+        opacity: 0.7;
     }
 
     #p-resume:hover {
-        -ms-transform: scale(1.2); /* IE 9 */
-        -webkit-transform: scale(1.2); /* Safari 3-8 */
-        transform: scale(1.2); 
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1); 
         opacity: 1.0;
     }
     
     #resume:hover {
-        -ms-transform: scale(1.2); /* IE 9 */
-        -webkit-transform: scale(1.2); /* Safari 3-8 */
-        transform: scale(1.2); 
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1); 
         opacity: 1.0;
     }
 }
@@ -250,6 +290,14 @@ html, body {
 
     #bio-img, #br0, #br1 {
         display: none;
+    }
+
+    #bio-words {
+        font-size: 2.3vh;
+    }
+
+    #p-hdr, #p-hdrLow {
+        font-size: 15px;
     }
 }
 
