@@ -34,6 +34,7 @@ var video;
 var rightClicked = false; var leftClicked = false;
 var upClicked = false; var downClicked = false;
 var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+var slide_num = 0;
 
 window.onload = getUserArrowChoice;
 function getUserArrowChoice() {
@@ -155,8 +156,9 @@ function removeArrows() {
 
 // Removes autoplay attribute for safari with a width below 800 pixels. 
 $(document).ready(function(){
-  var slide_num = 0;
-  setInterval(function(){ 
+  
+  setInterval(function() {
+    if (!back) {
       if (slide_num == 0) { 
         
         $('#bg').animateCss('rotateOutUpLeft', function() {
@@ -172,12 +174,12 @@ $(document).ready(function(){
           $('#bg').animateCss('rotateInUpLeft');
         });
         slide_num = 0;
-      }
-}, 7000);
+      } 
+    }
+  }, 7000);
 
   var screenWidth = $(window).width();
   (screenWidth < 800 && isSafari) ? $("#myVideo").attr("autoplay") : $("#myVideo").removeAttr("autoplay");
-  if (screenWidth < 600) {$("#hdrLeft").css("left", "4%")};
 });
 
 // if (isSafari && window.matchMedia("(orientation: portrait)").matches)
@@ -218,7 +220,6 @@ function showSlides(n) {
 // Crop column height based on screen size change.
 $(window).on('resize', function(){
   resizeCol();
-  ($(window).width() < 700) ? $("#hdrLeft").css("left", "4%") : $("#hdrLeft").css("left", "2.5%");
 });
   
 function resizeCol() {

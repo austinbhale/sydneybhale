@@ -16,7 +16,7 @@ html, body {
     visibility: hidden; 
     position: absolute; 
     top: 10%; 
-    right: 10%; 
+    right: 15%; 
     font-family: Georgia, 'Times New Roman', Times, serif; 
     color: #a3a2a3;
     animation-duration: 1.5s;
@@ -179,7 +179,7 @@ html, body {
     color: #a3a2a3; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute; 
-    right: 50%; 
+    right: 50.2%; 
     top: 4%;
 }
 
@@ -309,10 +309,108 @@ html, body {
     p {
         font-size: 12px;
     }
+
+    #nameHdr {
+        right: 4%;
+    }
 }
 
 @media only screen and (max-width: 618px) {
     #bio-img, #br0, #br1 {
         display: none;
+    }
+
+    #nameHdr {
+        right: 4%;
+    }
+}
+
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 640px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    #nameHdr {
+        font-size: 25px;
+    }
+}
+
+@media only screen
+    and (max-width: 824px)
+    and (orientation: landscape) {
+    #hdrLeft {
+        left: 2%;
+        bottom: 49%;  
+    }
+    #hdrUp {
+        top: 5%;
+    }
+    #hdrDown {
+        bottom: 5%;
+    }
+    #hdrRight {
+        right: 1%;
+        top: 47%;
+    }
+}
+
+    @media only screen
+    and (max-width: 415px)
+    and (orientation: portrait) {
+    #hdrLeft {
+        left: 4%;
+        bottom: 48%;  
+    }
+    #hdrUp {
+        top: 4%;
+    }
+    #hdrDown {
+        bottom: 4%;
+    }
+    #hdrRight {
+        right: 3%;
+        top: 47%;
+    }
+}
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1025px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #hdrLeft {
+        left: 5%;
+        bottom: 47.5%;  
+    }
+    #hdrUp {
+        top: 3%;
+    }
+    #hdrDown {
+        bottom: 3%;
+    }
+    #hdrRight {
+        right: 5%;
+        top: 47%;
+    }
+}
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1367px) 
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #hdrLeft {
+        left: 3%;
+        bottom: 47.5%;  
+    }
+    #hdrUp {
+        top: 3%;
+    }
+    #hdrDown {
+        bottom: 3%;
+    }
+    #hdrRight {
+        right: 3%;
+        top: 47%;
     }
 }

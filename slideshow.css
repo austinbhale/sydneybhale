@@ -79,3 +79,12 @@
   height: 100%;
   margin: auto;
 }
+
+/* @media only screen
+and (max-width: 415px)
+and (orientation: portrait) {
+  #slide0, #slide2, #slide4, 
+  #slide5, #slide6, #slide11 {
+    display: none;
+  }
+} */
