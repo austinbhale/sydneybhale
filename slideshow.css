@@ -88,3 +88,11 @@ and (orientation: portrait) {
     display: none;
   }
 } */
+
+@media only screen
+    and (max-width: 824px)
+    and (orientation: landscape) {
+      #slideshow {
+        height: 98%;
+      }
+}

@@ -15,6 +15,7 @@ $(document).ready(function() {
         
         if (document.documentMode || /Edge/.test(navigator.userAgent)) {
           $('#bg').css("max-height", window.innerHeight+"px");
+          $('#bg1').css("max-height", window.innerHeight+"px");
         }
 });
 
@@ -164,14 +165,16 @@ $(document).ready(function(){
         $('#bg').animateCss('rotateOutUpLeft', function() {
           $('#bg').css("display", "none");
           $('#bg1').css("display", "block");
-          $('#bg1').animateCss('rotateInUpLeft');
+          // rotateInUpLeft animation is not compatible with Microsoft Edge browser.
+          (document.documentMode || /Edge/.test(navigator.userAgent)) ? $('#bg1').animateCss('fadeIn') : $('#bg1').animateCss('rotateInUpLeft');
         });
         slide_num = 1;
       } else {
         $('#bg1').animateCss('rotateOutUpLeft', function() {
           $('#bg1').css("display", "none");
           $('#bg').css("display", "block");
-          $('#bg').animateCss('rotateInUpLeft');
+          // rotateInUpLeft animation is not compatible with Microsoft Edge browser.
+          (document.documentMode || /Edge/.test(navigator.userAgent)) ? $('#bg').animateCss('fadeIn') : $('#bg').animateCss('rotateInUpLeft');
         });
         slide_num = 0;
       } 

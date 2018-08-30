@@ -19,6 +19,8 @@ html, body {
     right: 15%; 
     font-family: Georgia, 'Times New Roman', Times, serif; 
     color: #a3a2a3;
+    animation-delay: 0.3s;
+    -vendor-animation-delay: 0.3s;
     animation-duration: 1.5s;
     -vendor-animation-duration: 1.5s;
 }
@@ -88,8 +90,8 @@ html, body {
 .arrowRight {
     width: 20px;
     height: 20px;
-    border-top: 4px solid rgb(94, 90, 90);
-    border-right: 4px solid rgb(94, 90, 90);
+    border-top: 4px solid #a3a2a3;
+    border-right: 4px solid #a3a2a3;
     border-left: none;
     border-bottom: none;
     transform: rotate(45deg);
@@ -103,8 +105,8 @@ html, body {
    .arrowDown {
     width: 20px;
     height: 20px;
-    border-top: 4px solid rgb(94, 90, 90);
-    border-right: 4px solid rgb(94, 90, 90);
+    border-top: 4px solid #a3a2a3;
+    border-right: 4px solid #a3a2a3;
     border-left: none;
     border-bottom: none;
     transform: rotate(135deg);
@@ -118,8 +120,8 @@ html, body {
 .arrowLeft {
     width: 20px;
     height: 20px;
-    border-top: 4px solid rgb(94, 90, 90);
-    border-right: 4px solid rgb(94, 90, 90);
+    border-top: 4px solid #a3a2a3;
+    border-right: 4px solid #a3a2a3;
     border-left: none;
     border-bottom: none;
     transform: rotate(225deg);
@@ -133,8 +135,8 @@ html, body {
 .arrowUp {
     width: 20px;
     height: 20px;
-    border-top: 4px solid rgb(94, 90, 90);
-    border-right: 4px solid rgb(94, 90, 90);
+    border-top: 4px solid #a3a2a3;
+    border-right: 4px solid #a3a2a3;
     border-left: none;
     border-bottom: none;
     transform: rotate(315deg);
@@ -246,12 +248,40 @@ html, body {
     color: black;
 }
 
+#bio-page {
+    height: 100%; 
+    width: 100%; 
+    display: none; 
+    position: absolute; 
+    top: 7%; 
+    background-color: #c9dfd3;
+}
+
+#bio-content {
+    width: 80%; 
+    height: 70%; 
+    margin-left: 10%; 
+    margin-right: 10%;
+}
+
+.page-header {
+    margin-top: 0px !important; 
+    margin-bottom: 10px !important; 
+    border-bottom: solid #a3a2a3 !important;
+}
+
+#bio-hdr {
+    margin-bottom: 0px !important; 
+    margin-top: 0px !important; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 #bio-img {
-    width: 30%; 
+    width: 30%;
     float: left; 
     margin-right: 2%; 
     border-radius: 50%;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
 #bio-words {
@@ -259,7 +289,7 @@ html, body {
     color:black; 
     font-family: Georgia, 'Times New Roman', Times, serif; 
     float: right;
-    font-size: 2.7vh;
+    font-size: 3.0vh;
 }
 
 @media only screen and (min-width: 729px) {
@@ -292,12 +322,16 @@ html, body {
         display: none;
     }
 
-    #bio-words {
-        font-size: 2.3vh;
-    }
-
     #p-hdr, #p-hdrLow {
         font-size: 15px;
+    }
+}
+
+@media only screen 
+and (max-width: 425px) 
+and (orientation: portrait) {
+    #bio-words {
+        font-size: 2.1vh;
     }
 }
 
@@ -392,6 +426,12 @@ html, body {
         right: 5%;
         top: 47%;
     }
+    #bio-words {
+        font-size: 2.3vh;
+    }  
+    #bio-img {
+        margin-bottom: 0%;
+    }
 }
 
 @media only screen 
@@ -412,5 +452,8 @@ html, body {
     #hdrRight {
         right: 3%;
         top: 47%;
+    }
+    #bio-img {
+        margin-bottom: 0%;
     }
 }
