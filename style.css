@@ -222,7 +222,7 @@ html, body {
 
 #portfolios {
     clear:both; 
-    width:80%; 
+    width: 80%; 
     height: 100%;
     margin-left: 10%; 
     margin-right: 10%;
@@ -316,7 +316,7 @@ html, body {
 @media only screen and (max-width: 425px) {
     #p-resume, #resume {
         width: 70%;
-        height: 40%;
+        height: 38%;
     }
 
     .divider {
@@ -329,6 +329,7 @@ html, body {
 
     #p-hdr, #p-hdrLow {
         font-size: 15px;
+        margin-bottom: 0px !important; 
     }
 }
 
@@ -390,6 +391,9 @@ and (orientation: portrait) {
     #hdrRight {
         right: 1%;
         top: 47%;
+    }
+    #bio-words {
+        font-size: 3.3vh;
     }
 }
 

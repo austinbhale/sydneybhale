@@ -84,9 +84,9 @@
 and (max-width: 425px) 
 and (orientation: portrait) {
   .stretch-img {
-    height: 43%;
+    height: 50%;
     width: 100%;
-    top: 34%; 
+    top: 30%; 
     position: relative; 
   }
 }
@@ -98,3 +98,16 @@ and (orientation: portrait) {
         height: 98%;
       }
 }
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1025px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .stretch-img {
+      height: 65%;
+      width: 100%;
+      top: 25%; 
+      position: relative; 
+    }
+  }
