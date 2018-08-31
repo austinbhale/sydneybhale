@@ -12,6 +12,16 @@ html, body {
     -vendor-animation-duration: 1s;
 }
 
+#bg {
+    display: block;
+    pointer-events: none; 
+}
+
+#bg1 {
+    display: none;
+    pointer-events: none; 
+}
+
 #nameHdr {
     visibility: hidden; 
     position: absolute; 
@@ -24,6 +34,7 @@ html, body {
 }
 
 #vidcontainer {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +45,7 @@ html, body {
     background-color: black;
   }
 
-  #vidcontainer > video {
+#vidcontainer > video {
     display: block;
     position: absolute;
     left: 50%;
@@ -42,19 +53,23 @@ html, body {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     z-index: 1;
-  }
-  @media screen and (max-aspect-ratio: 1280/720) {
+}
+
+@media screen and (max-aspect-ratio: 1280/720) {
     #vidcontainer > video {
-      height: 80%;
+        height: 80%;
     }
-  }
-  @media screen and (min-aspect-ratio: 1280/720) {
+}
+    
+@media screen and (min-aspect-ratio: 1280/720) {
     #vidcontainer > video {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 
 #wrapper {
+    height: 100%; 
+    width: 100%;
     background-color: #c9dfd3;
 }
 
@@ -72,11 +87,13 @@ html, body {
 }
 
 #indexPage {
-    /* animation-delay: 0.2s;
-    -vendor-animation-delay: 0.2s; */
     background-color: black;
-    /* animation-duration: 2s;
-    -vendor-animation-duration: 2s; */
+}
+
+#icon-ctr {
+    position: absolute; 
+    right: 5%; 
+    bottom: 3%;
 }
    
 .center-fit {
@@ -86,6 +103,9 @@ html, body {
 }
 
 .arrowRight {
+    position: absolute; 
+    right: 1%; 
+    bottom: 50%;
     width: 20px;
     height: 20px;
     border-top: 4px solid #a3a2a3;
@@ -100,7 +120,10 @@ html, body {
     outline: none;
 }
 
-   .arrowDown {
+.arrowDown {
+    position: absolute; 
+    right: 50%; 
+    bottom: 1%;
     width: 20px;
     height: 20px;
     border-top: 4px solid #a3a2a3;
@@ -116,6 +139,9 @@ html, body {
 }
 
 .arrowLeft {
+    position: absolute; 
+    left: 1%; 
+    bottom: 50%;
     width: 20px;
     height: 20px;
     border-top: 4px solid #a3a2a3;
@@ -131,6 +157,9 @@ html, body {
 }
 
 .arrowUp {
+    position: absolute; 
+    right: 50%; 
+    top: 1%;
     width: 20px;
     height: 20px;
     border-top: 4px solid #a3a2a3;
@@ -205,7 +234,7 @@ html, body {
     }
 }
 
-   .selectDisable {
+.selectDisable {
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -334,8 +363,8 @@ html, body {
 }
 
 @media only screen 
-and (max-width: 425px) 
-and (orientation: portrait) {
+    and (max-width: 425px) 
+    and (orientation: portrait) {
     #bio-words {
         font-size: 2.1vh;
     }
@@ -366,10 +395,10 @@ and (orientation: portrait) {
 }
 
 @media only screen 
-  and (min-width: 320px) 
-  and (max-width: 640px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+    and (min-width: 320px) 
+    and (max-width: 640px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
     #nameHdr {
         font-size: 25px;
     }
@@ -382,16 +411,20 @@ and (orientation: portrait) {
         left: 2%;
         bottom: 49%;  
     }
+ 
     #hdrUp {
         top: 5%;
     }
+ 
     #hdrDown {
         bottom: 5%;
     }
+ 
     #hdrRight {
         right: 1%;
         top: 47%;
     }
+ 
     #bio-words {
         font-size: 3.23vh;
     }
@@ -404,12 +437,15 @@ and (orientation: portrait) {
         left: 4%;
         bottom: 48%;  
     }
+ 
     #hdrUp {
         top: 4%;
     }
+ 
     #hdrDown {
         bottom: 4%;
     }
+ 
     #hdrRight {
         right: 3%;
         top: 47%;
@@ -417,57 +453,68 @@ and (orientation: portrait) {
 }
 
 @media only screen 
-  and (min-width: 768px) 
-  and (max-width: 1025px) 
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
+    and (min-width: 768px) 
+    and (max-width: 1025px) 
+    and (orientation: portrait)
+    and (-webkit-min-device-pixel-ratio: 2) {
     #hdrLeft {
         left: 5%;
         bottom: 47.5%;  
     }
+ 
     #hdrUp {
         top: 3%;
     }
+ 
     #hdrDown {
         bottom: 3%;
     }
+ 
     #hdrRight {
         right: 5%;
         top: 47%;
     }
+ 
     #bio-words {
         font-size: 2.3vh;
     }  
+ 
     #bio-img {
         margin-bottom: 0%;
     }
+ 
     #p-resume, #resume {
         width: 43%;
     }
 }
 
 @media only screen 
-  and (min-width: 768px) 
-  and (max-width: 1367px) 
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) {
+    and (min-width: 768px) 
+    and (max-width: 1367px) 
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 2) {
     #hdrLeft {
         left: 3%;
         bottom: 47.5%;  
     }
+ 
     #hdrUp {
         top: 3%;
     }
+ 
     #hdrDown {
         bottom: 3%;
     }
+ 
     #hdrRight {
         right: 3%;
         top: 47%;
     }
+ 
     #bio-img {
         margin-bottom: 0%;
     }
+ 
     #p-resume, #resume {
         width: 43%;
     }

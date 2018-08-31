@@ -1,5 +1,12 @@
 var back = false; var ready = false;
 
+var rightClicked = false; var leftClicked = false;
+var upClicked = false; var downClicked = false;
+
+var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+var slide_num = 0; 
+var video;
+
 $(document).ready(function() {
       $("#arrDown").css("margin-right", (-($("#arrDown").width())/2));
       $("#arrUp").css("margin-right", (-($("#arrUp").width())/2));
@@ -12,7 +19,7 @@ $(document).ready(function() {
         $("#nameHdr").animateCss('zoomIn', function() {
           ready = true;
         });
-        
+        // Microsoft Edge only - needed for background image to fit properly.
         if (document.documentMode || /Edge/.test(navigator.userAgent)) {
           $('#bg').css("max-height", window.innerHeight+"px");
           $('#bg1').css("max-height", window.innerHeight+"px");
@@ -31,12 +38,6 @@ function fixIOSPlaceholderBug () {
     }
 }
 
-var video;
-var rightClicked = false; var leftClicked = false;
-var upClicked = false; var downClicked = false;
-var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-var slide_num = 0;
-
 window.onload = getUserArrowChoice;
 function getUserArrowChoice() {
   document.getElementById("arrows").onclick = setArrowChoice;
@@ -47,7 +48,6 @@ function setArrowChoice(e) {
   if (e.target.tagName == 'BUTTON' && ready) {
 
     var x = document.getElementById("indexPage");
-
 
     switch (e.target.id) {
       case ("arrRight"):
@@ -189,7 +189,6 @@ $(document).ready(function(){
 if (document.documentMode || /Edge/.test(navigator.userAgent)) {
   $('#bg').css("max-height", ""+window.innerHeight);
 }
-
 
 var slideIndex = 1;
 showSlides(slideIndex);
