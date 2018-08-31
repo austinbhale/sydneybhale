@@ -91,14 +91,6 @@ and (orientation: portrait) {
   }
 }
 
-@media only screen
-    and (max-width: 824px)
-    and (orientation: landscape) {
-      #slideshow {
-        height: 98%;
-      }
-}
-
 @media only screen 
   and (min-width: 768px) 
   and (max-width: 1025px) 
@@ -107,7 +99,19 @@ and (orientation: portrait) {
     .stretch-img {
       height: 65%;
       width: 100%;
-      top: 25%; 
+      top: 27%; 
       position: relative; 
     }
+  }
+
+  @supports not (-webkit-overflow-scrolling: touch)
+     {
+    /* CSS for other than iOS devices */
+      @media only screen
+      and (max-width: 824px)
+      and (orientation: landscape) {
+        #slideshow {
+          height: 97%;
+        }
+      }
   }
