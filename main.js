@@ -15,14 +15,22 @@ $(document).ready(function() {
       $("#hdrDown").css("margin-right", ((-($("#hdrDown").width())/2)));
       $("#hdrUp").css("margin-right", ((-($("#hdrUp").width())/2)));
 
+      for (var i=0; i<12; i++) {
+        $("#slide-pic"+i).css({"animation-duration": "2s" , "-vendor-animation-duration" : "2s"});
+      }
+
       $("#nameHdr").css("visibility", "visible");
         $("#nameHdr").animateCss('zoomIn', function() {
-          ready = true;
+          $("#arrows").css("visibility", "visible");
+          $("#arrows").animateCss('fadeIn', function() {
+            ready = true;
+          });
         });
         // Microsoft Edge only - needed for background image to fit properly.
         if (document.documentMode || /Edge/.test(navigator.userAgent)) {
           $('#bg').css("max-height", window.innerHeight+"px");
           $('#bg1').css("max-height", window.innerHeight+"px");
+          $('#bg2').css("max-height", window.innerHeight+"px");
         }
 });
 
@@ -48,6 +56,10 @@ function setArrowChoice(e) {
   if (e.target.tagName == 'BUTTON' && ready) {
 
     var x = document.getElementById("indexPage");
+
+    // Change header animation duration back to 1.5s.
+    $('#nameHdr').css("animation-duration", "1.5s");
+    $('#nameHdr').css("-vendor-animation-duration", "1.5s");
 
     switch (e.target.id) {
       case ("arrRight"):
@@ -162,19 +174,24 @@ $(document).ready(function(){
     if (!back) {
       if (slide_num == 0) { 
         
-        $('#bg').animateCss('rotateOutUpLeft', function() {
+        $('#bg').animateCss('fadeOut', function() {
           $('#bg').css("display", "none");
           $('#bg1').css("display", "block");
-          // rotateInUpLeft animation is not compatible with Microsoft Edge browser.
-          (document.documentMode || /Edge/.test(navigator.userAgent)) ? $('#bg1').animateCss('fadeIn') : $('#bg1').animateCss('rotateInUpLeft');
+          $('#bg1').animateCss('fadeIn');
         });
         slide_num = 1;
-      } else {
-        $('#bg1').animateCss('rotateOutUpLeft', function() {
+      } else if (slide_num == 1) {
+        $('#bg1').animateCss('fadeOut', function() {
           $('#bg1').css("display", "none");
+          $('#bg2').css("display", "block");
+          $('#bg2').animateCss('fadeIn');
+        });
+        slide_num = 2;
+      } else {
+        $('#bg2').animateCss('fadeOut', function() {
+          $('#bg2').css("display", "none");
           $('#bg').css("display", "block");
-          // rotateInUpLeft animation is not compatible with Microsoft Edge browser.
-          (document.documentMode || /Edge/.test(navigator.userAgent)) ? $('#bg').animateCss('fadeIn') : $('#bg').animateCss('rotateInUpLeft');
+          $('#bg').animateCss('fadeIn');
         });
         slide_num = 0;
       } 
@@ -185,21 +202,22 @@ $(document).ready(function(){
   (screenWidth < 800 && isSafari) ? $("#myVideo").attr("autoplay") : $("#myVideo").removeAttr("autoplay");
 });
 
-// if (isSafari && window.matchMedia("(orientation: portrait)").matches)
 if (document.documentMode || /Edge/.test(navigator.userAgent)) {
   $('#bg').css("max-height", ""+window.innerHeight);
 }
 
-var slideIndex = 1;
+var slideIndex = 1; var animation = false;
 showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
+  animation = true;
   showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
+  animation = false;
   showSlides(slideIndex = n);
 }
 
@@ -210,12 +228,16 @@ function showSlides(n) {
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+      slides[i].style.display = "none"; 
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
     slides[slideIndex-1].style.display = "block";
+    if (back) {
+      $("#slide-pic"+(slideIndex-1)).animateCss('fadeIn');
+    }
+
     dots[slideIndex-1].className += " active";  
 }
 

@@ -7,7 +7,7 @@ html, body {
     position: relative;
 }
 
-#bg, #bg1 {
+#bg, #bg1, #bg2 {
     animation-duration: 1s;
     -vendor-animation-duration: 1s;
 }
@@ -17,20 +17,21 @@ html, body {
     pointer-events: none; 
 }
 
-#bg1 {
+#bg1, #bg2 {
     display: none;
     pointer-events: none; 
 }
 
+
 #nameHdr {
     visibility: hidden; 
     position: absolute; 
-    top: 10%; 
+    top: 9%; 
     right: 15%; 
     font-family: Georgia, 'Times New Roman', Times, serif; 
     color: #a3a2a3;
-    animation-duration: 1.5s;
-    -vendor-animation-duration: 1.5s;
+    animation-duration: 3s;
+    -vendor-animation-duration: 3s;
 }
 
 #vidcontainer {
@@ -100,6 +101,10 @@ html, body {
     max-width: 100%;
     max-height: 100%;
     margin: auto;
+}
+
+#arrows {
+    visibility: hidden;
 }
 
 .arrowRight {
@@ -381,6 +386,7 @@ html, body {
 
     #nameHdr {
         right: 4%;
+        font-size: 28px;
     }
 }
 
