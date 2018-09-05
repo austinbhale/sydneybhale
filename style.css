@@ -436,7 +436,7 @@ html, body {
     }
 }
 
-    @media only screen
+@media only screen
     and (max-width: 415px)
     and (orientation: portrait) {
     #hdrLeft {
@@ -524,4 +524,23 @@ html, body {
     #p-resume, #resume {
         width: 43%;
     }
+}
+
+@media only screen 
+    and (min-width: 1025px) {
+        #hdrLeft {
+            left: 3%;
+            bottom: 47.5%;  
+        }
+        
+        #hdrRight {
+            right: 3%;
+            top: 47%;
+        }
+
+        .center-fit {
+            max-width: 100%;
+            height: 100%;
+            margin: auto;
+        }
 }

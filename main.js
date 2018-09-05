@@ -16,7 +16,7 @@ $(document).ready(function() {
       $("#hdrUp").css("margin-right", ((-($("#hdrUp").width())/2)));
 
       for (var i=0; i<12; i++) {
-        $("#slide"+i).css({"animation-duration": "2s" , "-vendor-animation-duration" : "2s"});
+        $("#slide-pic"+i).css({"animation-duration": "2s" , "-vendor-animation-duration" : "2s"});
       }
 
       $("#nameHdr").css("visibility", "visible");
@@ -235,7 +235,7 @@ function showSlides(n) {
   }
     slides[slideIndex-1].style.display = "block";
     if (back) {
-      $("#slide"+(slideIndex-1)).animateCss('fadeIn');
+      $("#slide-pic"+(slideIndex-1)).animateCss('fadeIn');
     }
 
     dots[slideIndex-1].className += " active";  
