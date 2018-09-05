@@ -275,7 +275,7 @@ html, body {
     height: 65%; 
     width: 35%; 
     border: solid #a3a2a3 2px;
-    margin-top: 15px;
+    margin-top: 17px;
 }
 
 #p-hdr {
@@ -437,10 +437,25 @@ html, body {
 }
 
 @media only screen
+    and (max-width: 321px)
+    and (orientation: portrait) {
+        #hdrLeft {
+            left: 4%;
+            bottom: 48%;  
+        }
+
+        #hdrRight {
+            right: 3%;
+            top: 47%;
+        }
+}
+
+@media only screen
+    and (min-width: 321px)
     and (max-width: 415px)
     and (orientation: portrait) {
     #hdrLeft {
-        left: 4%;
+        left: 4.5%;
         bottom: 48%;  
     }
  
@@ -453,7 +468,7 @@ html, body {
     }
  
     #hdrRight {
-        right: 3%;
+        right: 3.5%;
         top: 47%;
     }
 }
@@ -527,7 +542,23 @@ html, body {
 }
 
 @media only screen 
-    and (min-width: 1025px) {
+    and (width : 375px) 
+    and (height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+        #hdrLeft {
+            left: 5%;
+            bottom: 47.5%;  
+        }
+        
+        #hdrRight {
+            right: 3%;
+            top: 47%;
+        }
+}
+
+/* Desktop dimensions */
+@media only screen 
+    and (min-width: 1384px) {
         #hdrLeft {
             left: 3%;
             bottom: 47.5%;  
@@ -542,5 +573,10 @@ html, body {
             max-width: 100%;
             height: 100%;
             margin: auto;
+        }
+
+        #p-resume, #resume {
+            margin-top: 60px;
+            width: 40%;
         }
 }
