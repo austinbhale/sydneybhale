@@ -640,12 +640,12 @@ html, body {
 @media only screen 
     and (min-width: 1384px) {
         #hdrLeft {
-            left: 3%;
+            left: 2%;
             bottom: 47.5%;  
         }
         
         #hdrRight {
-            right: 3%;
+            right: 1%;
             top: 47%;
         }
 
@@ -680,5 +680,9 @@ html, body {
     and (min-width: 1500px) {
         #descr {
             top: 12%;
+        }
+
+        #hdrRight {
+            right: 2%;
         }
     }
