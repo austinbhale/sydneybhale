@@ -26,9 +26,21 @@ html, body {
 #nameHdr {
     visibility: hidden; 
     position: absolute; 
-    top: 9%; 
-    right: 15%; 
-    font-family: Georgia, 'Times New Roman', Times, serif; 
+    top: 10%; 
+    right: 14%; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    color: #a3a2a3;
+    animation-duration: 3s;
+    -vendor-animation-duration: 3s;
+}
+
+#descr {
+    text-align: center;
+    visibility: hidden; 
+    position: absolute; 
+    top: 20%; 
+    right: 3%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
@@ -181,7 +193,7 @@ html, body {
 
 #hdrRight {
     color: #a3a2a3; 
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     position: absolute; 
     right: 2%; 
     bottom: 47%; 
@@ -192,7 +204,7 @@ html, body {
 
 #hdrDown {
     color: #a3a2a3; 
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     position: absolute; 
     right: 50%; 
     bottom: 4%;
@@ -200,7 +212,7 @@ html, body {
 
 #hdrLeft {
     color: #a3a2a3;
-    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
     position: absolute; 
     left: 2.5%; 
     top: 47%; 
@@ -211,7 +223,7 @@ html, body {
 
 #hdrUp {
     color: #a3a2a3; 
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     position: absolute; 
     right: 50.2%; 
     top: 4%;
@@ -279,7 +291,7 @@ html, body {
 }
 
 #p-hdr {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
 }
 
@@ -373,6 +385,14 @@ html, body {
     #bio-words {
         font-size: 2.1vh;
     }
+
+    #descr {
+        top: 21%;
+    }
+
+    .descrHdr {
+        font-size: 10px;
+    }
 }
 
 @media only screen and (max-height: 570px) {
@@ -386,7 +406,7 @@ html, body {
 
     #nameHdr {
         right: 4%;
-        font-size: 28px;
+        font-size: 42px;
     }
 }
 
@@ -406,7 +426,12 @@ html, body {
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: landscape) {
     #nameHdr {
-        font-size: 25px;
+        font-size: 33px;
+        top: 5%;
+    }
+
+    .descrHdr {
+        font-size: 7px;
     }
 }
 
@@ -434,18 +459,30 @@ html, body {
     #bio-words {
         font-size: 3.23vh;
     }
+
+    #nameHdr {
+        top: 5%;
+    }
+
+    #descr {
+        top: 21%;
+    }
+
+    .descrHdr {
+        font-size: 9px;
+    }
 }
 
 @media only screen
     and (max-width: 321px)
     and (orientation: portrait) {
         #hdrLeft {
-            left: 4%;
+            left: 3%;
             bottom: 48%;  
         }
 
         #hdrRight {
-            right: 3%;
+            right: 2%;
             top: 47%;
         }
 }
@@ -455,7 +492,7 @@ html, body {
     and (max-width: 415px)
     and (orientation: portrait) {
     #hdrLeft {
-        left: 4.5%;
+        left: 3%;
         bottom: 48%;  
     }
  
@@ -468,8 +505,16 @@ html, body {
     }
  
     #hdrRight {
-        right: 3.5%;
+        right: 1.5%;
         top: 47%;
+    }
+
+    #nameHdr {
+        font-size: 55px;
+    }
+
+    .descrHdr {
+        font-size: 13px;
     }
 }
 
@@ -492,8 +537,22 @@ html, body {
     }
  
     #hdrRight {
-        right: 5%;
+        right: 4%;
         top: 47%;
+    }
+
+    #nameHdr {
+        font-size: 75px;
+        right: 5%;
+        top: 9%;
+    }
+
+    #descr {
+        top: 18.5%;
+    }
+
+    .descrHdr {
+        font-size: 18px;
     }
  
     #bio-words {
@@ -515,20 +574,20 @@ html, body {
     and (orientation: landscape)
     and (-webkit-min-device-pixel-ratio: 2) {
     #hdrLeft {
-        left: 3%;
+        left: 1%;
         bottom: 47.5%;  
     }
  
     #hdrUp {
-        top: 3%;
+        top: 5%;
     }
  
     #hdrDown {
-        bottom: 3%;
+        bottom: 5%;
     }
  
     #hdrRight {
-        right: 3%;
+        right: 1%;
         top: 47%;
     }
  
@@ -540,6 +599,27 @@ html, body {
         width: 43%;
     }
 }
+
+@media only screen 
+    and (min-width: 1023px) 
+    and (max-width: 1367px) 
+    and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        #nameHdr {
+            font-size: 75px;
+            right: 3%;
+            top: 2%;
+        }
+    
+        .descrHdr {
+            font-size: 16px;
+        }
+    
+        #descr {
+            top: 14%;
+            right: 2%;
+        }
+    }
 
 @media only screen 
     and (width : 375px) 
@@ -569,6 +649,21 @@ html, body {
             top: 47%;
         }
 
+        #nameHdr {
+            font-size: 75px;
+            right: 3%;
+            top: 3%;
+        }
+    
+        #descr {
+            right: 2%;
+            top: 17%;
+        }
+
+        .descrHdr {
+            font-size: 18px;
+        }
+
         .center-fit {
             max-width: 100%;
             height: 100%;
@@ -580,3 +675,10 @@ html, body {
             width: 40%;
         }
 }
+
+@media only screen 
+    and (min-width: 1500px) {
+        #descr {
+            top: 12%;
+        }
+    }

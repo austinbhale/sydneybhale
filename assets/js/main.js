@@ -20,12 +20,26 @@ $(document).ready(function() {
       }
 
       $("#nameHdr").css("visibility", "visible");
-        $("#nameHdr").animateCss('zoomIn', function() {
-          $("#arrows").css("visibility", "visible");
-          $("#arrows").animateCss('fadeIn', function() {
-            ready = true;
+      $("#nameHdr").animateCss('zoomIn', function() {
+        $("#descr1").css("visibility", "visible");
+        $("#descr1").animateCss('fadeInUp', function() {
+          $("#descr2").css("visibility", "visible");
+          $("#descr2").animateCss('fadeInUp', function() {
+            $("#descr3").css("visibility", "visible");
+            $("#descr3").animateCss('fadeInUp', function() {
+              $("#descr4").css("visibility", "visible");
+              $("#descr4").animateCss('fadeInUp', function() {
+                for (var i=1; i<=3; i++) {
+                  $("#descrBar"+i).css("visibility", "visible");
+                  $("#descrBar"+i).animateCss('fadeIn');
+                }             
+                $("#arrows").css("visibility", "visible");
+                $("#arrows").animateCss('fadeIn', function() {ready = true;});
+              });
+            });
           });
         });
+      });
         // Microsoft Edge only - needed for background image to fit properly.
         if (document.documentMode || /Edge/.test(navigator.userAgent)) {
           $('#bg').css("max-height", window.innerHeight+"px");
@@ -154,17 +168,21 @@ function helper() {
   back = false; home_return = true;
   document.getElementById("indexPage").style.visibility = "visible";
   $('#arrows button[class^="arr"]').css("visibility", "visible");
-  $('#arrows h5[id^="hdr"]').css("visibility", "visible");
+  $('#arrows h4[id^="hdr"]').css("visibility", "visible");
   $('#nameHdr').css("visibility", "visible");
+  $('#descr h5[id^="descr"]').css("visibility", "visible");
   $('#arrows button[class^="arr"]').animateCss('fadeIn');
-  $('#arrows h5[id^="hdr"]').animateCss('fadeIn'); 
+  $('#arrows h4[id^="hdr"]').animateCss('fadeIn'); 
   $('#nameHdr').animateCss('fadeIn');
+  $('#descr h5[id^="descr"]').animateCss('fadeIn');
+
 }
 
 function removeArrows() {
             $('#arrows button[class^="arr"]').css("visibility", "hidden");
-            $('#arrows h5[id^="hdr"]').css("visibility", "hidden");
+            $('#arrows h4[id^="hdr"]').css("visibility", "hidden");
             $('#nameHdr').css("visibility", "hidden");
+            $('#descr h5[id^="descr"]').css("visibility", "hidden");
 }
 
 // Removes autoplay attribute for safari with a width below 800 pixels. 
