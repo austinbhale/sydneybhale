@@ -26,9 +26,10 @@ html, body {
 #nameHdr {
     visibility: hidden; 
     position: absolute; 
-    top: 10%; 
-    right: 14%; 
+    top: 7%; 
+    right: 5%; 
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    font-size: 8vh;
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
@@ -38,12 +39,16 @@ html, body {
     text-align: center;
     visibility: hidden; 
     position: absolute; 
-    top: 20%; 
+    top: 18%; 
     right: 3%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
+}
+
+.descrHdr {
+    font-size: 1.7vh;
 }
 
 #vidcontainer {
@@ -385,14 +390,6 @@ html, body {
     #bio-words {
         font-size: 2.1vh;
     }
-
-    #descr {
-        top: 21%;
-    }
-
-    .descrHdr {
-        font-size: 10px;
-    }
 }
 
 @media only screen and (max-height: 570px) {
@@ -404,10 +401,10 @@ html, body {
         font-size: 12px;
     }
 
-    #nameHdr {
+    /* #nameHdr {
         right: 4%;
         font-size: 42px;
-    }
+    } */
 }
 
 @media only screen and (max-width: 618px) {
@@ -415,24 +412,9 @@ html, body {
         display: none;
     }
 
-    #nameHdr {
+    /* #nameHdr {
         right: 4%;
-    }
-}
-
-@media only screen 
-    and (min-width: 320px) 
-    and (max-width: 640px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: landscape) {
-    #nameHdr {
-        font-size: 33px;
-        top: 5%;
-    }
-
-    .descrHdr {
-        font-size: 7px;
-    }
+    } */
 }
 
 @media only screen
@@ -458,18 +440,6 @@ html, body {
  
     #bio-words {
         font-size: 3.23vh;
-    }
-
-    #nameHdr {
-        top: 5%;
-    }
-
-    #descr {
-        top: 21%;
-    }
-
-    .descrHdr {
-        font-size: 9px;
     }
 }
 
@@ -508,14 +478,6 @@ html, body {
         right: 1.5%;
         top: 47%;
     }
-
-    #nameHdr {
-        font-size: 55px;
-    }
-
-    .descrHdr {
-        font-size: 13px;
-    }
 }
 
 @media only screen 
@@ -539,20 +501,6 @@ html, body {
     #hdrRight {
         right: 4%;
         top: 47%;
-    }
-
-    #nameHdr {
-        font-size: 75px;
-        right: 5%;
-        top: 9%;
-    }
-
-    #descr {
-        top: 18.5%;
-    }
-
-    .descrHdr {
-        font-size: 18px;
     }
  
     #bio-words {
@@ -601,27 +549,6 @@ html, body {
 }
 
 @media only screen 
-    and (min-width: 1023px) 
-    and (max-width: 1367px) 
-    and (orientation: landscape)
-    and (-webkit-min-device-pixel-ratio: 2) {
-        #nameHdr {
-            font-size: 75px;
-            right: 3%;
-            top: 2%;
-        }
-    
-        .descrHdr {
-            font-size: 16px;
-        }
-    
-        #descr {
-            top: 14%;
-            right: 2%;
-        }
-    }
-
-@media only screen 
     and (width : 375px) 
     and (height : 812px) 
     and (-webkit-device-pixel-ratio : 3) { 
@@ -649,21 +576,6 @@ html, body {
             top: 47%;
         }
 
-        #nameHdr {
-            font-size: 75px;
-            right: 3%;
-            top: 3%;
-        }
-    
-        #descr {
-            right: 2%;
-            top: 17%;
-        }
-
-        .descrHdr {
-            font-size: 18px;
-        }
-
         .center-fit {
             max-width: 100%;
             height: 100%;
@@ -678,10 +590,6 @@ html, body {
 
 @media only screen 
     and (min-width: 1500px) {
-        #descr {
-            top: 12%;
-        }
-
         #hdrRight {
             right: 2%;
         }
