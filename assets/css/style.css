@@ -400,21 +400,12 @@ html, body {
     p {
         font-size: 12px;
     }
-
-    /* #nameHdr {
-        right: 4%;
-        font-size: 42px;
-    } */
 }
 
 @media only screen and (max-width: 618px) {
     #bio-img, #br0, #br1 {
         display: none;
     }
-
-    /* #nameHdr {
-        right: 4%;
-    } */
 }
 
 @media only screen
@@ -455,6 +446,10 @@ html, body {
             right: 2%;
             top: 47%;
         }
+
+        #nameHdr {
+            font-size: 6vh;
+        }
 }
 
 @media only screen
@@ -477,6 +472,10 @@ html, body {
     #hdrRight {
         right: 1.5%;
         top: 47%;
+    }
+
+    #nameHdr {
+        font-size: 6vh;
     }
 
     .descrHdr {
