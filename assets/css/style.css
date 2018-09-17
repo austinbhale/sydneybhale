@@ -26,10 +26,10 @@ html, body {
 #nameHdr {
     visibility: hidden; 
     position: absolute; 
-    top: 7%; 
-    right: 5%; 
+    top: 6.5%; 
+    right: 7%; 
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-    font-size: 7.5vh;
+    font-size: 8.5vh;
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
@@ -48,7 +48,7 @@ html, body {
 }
 
 .descrHdr {
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 
 #vidcontainer {
@@ -575,16 +575,6 @@ html, body {
         #p-resume, #resume {
             margin-top: 60px;
             width: 40%;
-        }
-
-        #nameHdr {
-            right: 6.5%;
-            top: 6.5%;
-            font-size: 8.5vh;
-        }
-
-        .descrHdr {
-            font-size: 2.5vh;
         }
 
         #descr {
