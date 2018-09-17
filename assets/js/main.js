@@ -4,13 +4,14 @@ var rightClicked = false; var leftClicked = false;
 var upClicked = false; var downClicked = false;
 
 var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+var iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
 var slide_num = 0; 
 var video;
 
 $(document).ready(function() {
   
   // Separate compatible font for ios devices.
-  if (isSafari) {
+  if (iOS) {
     $('#arrows h4[id^="hdr"]').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
     "font-stretch":"condensed", "font-weight":"bold"});
     $('#nameHdr').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
