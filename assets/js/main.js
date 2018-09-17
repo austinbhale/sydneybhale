@@ -8,44 +8,55 @@ var slide_num = 0;
 var video;
 
 $(document).ready(function() {
-      $("#arrDown").css("margin-right", (-($("#arrDown").width())/2));
-      $("#arrUp").css("margin-right", (-($("#arrUp").width())/2));
-      $("#arrLeft").css("margin-bottom", (-($("#arrLeft").width())/2));
-      $("#arrRight").css("margin-bottom", (-($("#arrRight").width())/2));
-      $("#hdrDown").css("margin-right", ((-($("#hdrDown").width())/2)));
-      $("#hdrUp").css("margin-right", ((-($("#hdrUp").width())/2)));
+  
+  // Separate compatible font for ios devices.
+  if (isSafari) {
+    $('#arrows h4[id^="hdr"]').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
+    "font-stretch":"condensed", "font-weight":"bold"});
+    $('#nameHdr').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
+    "font-stretch":"condensed", "font-weight":"bold"});
+    $('#descr').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
+    "font-stretch":"condensed", "font-weight":"bold"});
+  }
 
-      for (var i=0; i<12; i++) {
-        $("#slide-pic"+i).css({"animation-duration": "2s" , "-vendor-animation-duration" : "2s"});
-      }
+  $("#arrDown").css("margin-right", (-($("#arrDown").width())/2));
+  $("#arrUp").css("margin-right", (-($("#arrUp").width())/2));
+  $("#arrLeft").css("margin-bottom", (-($("#arrLeft").width())/2));
+  $("#arrRight").css("margin-bottom", (-($("#arrRight").width())/2));
+  $("#hdrDown").css("margin-right", ((-($("#hdrDown").width())/2)));
+  $("#hdrUp").css("margin-right", ((-($("#hdrUp").width())/2)));
 
-      $("#nameHdr").css("visibility", "visible");
-      $("#nameHdr").animateCss('zoomIn', function() {
-        $("#descr1").css("visibility", "visible");
-        $("#descr1").animateCss('fadeInUp', function() {
-          $("#descr2").css("visibility", "visible");
-          $("#descr2").animateCss('fadeInUp', function() {
-            $("#descr3").css("visibility", "visible");
-            $("#descr3").animateCss('fadeInUp', function() {
-              $("#descr4").css("visibility", "visible");
-              $("#descr4").animateCss('fadeInUp', function() {
-                for (var i=1; i<=3; i++) {
-                  $("#descrBar"+i).css("visibility", "visible");
-                  $("#descrBar"+i).animateCss('fadeIn');
-                }             
-                $("#arrows").css("visibility", "visible");
-                $("#arrows").animateCss('fadeIn', function() {ready = true;});
-              });
-            });
+  for (var i=0; i<12; i++) {
+    $("#slide-pic"+i).css({"animation-duration": "2s" , "-vendor-animation-duration" : "2s"});
+  }
+
+  $("#nameHdr").css("visibility", "visible");
+  $("#nameHdr").animateCss('zoomIn', function() {
+    $("#descr1").css("visibility", "visible");
+    $("#descr1").animateCss('fadeInUp', function() {
+      $("#descr2").css("visibility", "visible");
+      $("#descr2").animateCss('fadeInUp', function() {
+        $("#descr3").css("visibility", "visible");
+        $("#descr3").animateCss('fadeInUp', function() {
+          $("#descr4").css("visibility", "visible");
+          $("#descr4").animateCss('fadeInUp', function() {
+            for (var i=1; i<=3; i++) {
+              $("#descrBar"+i).css("visibility", "visible");
+              $("#descrBar"+i).animateCss('fadeIn');
+            }             
+            $("#arrows").css("visibility", "visible");
+            $("#arrows").animateCss('fadeIn', function() {ready = true;});
           });
         });
       });
-        // Microsoft Edge only - needed for background image to fit properly.
-        if (document.documentMode || /Edge/.test(navigator.userAgent)) {
-          $('#bg').css("max-height", window.innerHeight+"px");
-          $('#bg1').css("max-height", window.innerHeight+"px");
-          $('#bg2').css("max-height", window.innerHeight+"px");
-        }
+    });
+  });
+    // Microsoft Edge only - needed for background image to fit properly.
+    if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+      $('#bg').css("max-height", window.innerHeight+"px");
+      $('#bg1').css("max-height", window.innerHeight+"px");
+      $('#bg2').css("max-height", window.innerHeight+"px");
+    }
 });
 
 $(window).on("orientationchange", fixIOSPlaceholderBug);

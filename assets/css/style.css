@@ -448,6 +448,7 @@ html, body {
         }
 
         #nameHdr {
+            top: 7.5%;
             font-size: 6vh;
         }
 }
@@ -475,11 +476,12 @@ html, body {
     }
 
     #nameHdr {
-        font-size: 6vh;
+        top: 7.5%;
+        font-size: 6.5vh;
     }
 
     .descrHdr {
-        font-size: 1.7vh;
+        font-size: 1.9vh;
     }
 }
 
@@ -582,7 +584,11 @@ html, body {
         }
 
         .descrHdr {
-            font-size: 2.3vh;
+            font-size: 2.5vh;
+        }
+
+        #descr {
+            right: 2%;
         }
 }
 
