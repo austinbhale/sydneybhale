@@ -1,8 +1,7 @@
 html, body {
     max-width: 100%;
     height: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: black;
     position: relative;
 }
@@ -24,28 +23,33 @@ html, body {
 
 #nameHdr {
     visibility: hidden; 
-    position: absolute; 
-    left: 38.5%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
     font-family: 'Raleway', sans-serif;
-    font-size: 7.5vh;
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
-    margin-top: 5px;
-
+    z-index: 1;
 }
 
 #descr {
-    text-align: center;
     visibility: hidden; 
-    position: absolute; 
-    top: 6%; 
-    left: 37%;
-    font-size: 7vh;
+    position: fixed; 
+    right: 0;
+    left: 0;
+    top: 8%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
     font-family: 'Raleway', sans-serif;
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
+    z-index: 1;
 }
 
 .descrHdr {
@@ -55,7 +59,6 @@ html, body {
 #vidcontainer {
     display: none;
     position: absolute;
-    top: 0;
     max-width: 100%;
     height: 100vh;
     animation-duration: 0.5s;
@@ -66,7 +69,7 @@ html, body {
 #vidcontainer > video {
     display: block;
     position: absolute;
-    left: 53.5%;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -106,7 +109,8 @@ html, body {
     max-width: 100%;
     max-height: 100%;
     margin: auto;
-    padding-top: 8%;
+    /* position: fixed; */
+    padding-top: 7%;
 }
 
 .center-fit {
@@ -171,6 +175,7 @@ html, body {
     border-radius: 15%;
     background-color: transparent; 
     outline: none;
+    z-index: 1;
 }
 
 .arrowUp {
@@ -233,6 +238,11 @@ html, body {
     }
 
     .arrowLeft:hover {
+        border-top: 4px solid rgb(226, 219, 219);
+        border-right: 4px solid rgb(226, 219, 219);
+    }
+
+    .arrowUp:hover {
         border-top: 4px solid rgb(226, 219, 219);
         border-right: 4px solid rgb(226, 219, 219);
     }
@@ -331,36 +341,12 @@ html, body {
 }
 
 @media only screen and (max-width: 600px) {
-    #p-resume, #resume {
-        width: 70%;
-        height: 38%;
-    }
-
     .divider {
         display: none;
     }
 
     #bio-img, #br0, #br1 {
         display: none;
-    }
-
-    #p-hdr, #p-hdrLow {
-        font-size: 15px;
-        margin-bottom: 0px !important; 
-    }
-
-    .descrHdr {
-        font-size: 1.7vh;
-    }
-
-    #descr {
-        top: 1%; 
-        left: 23%;
-    }
-
-    #nameHdr {
-        left: 25%;
-        font-size: 5.5vh;
     }
 }
 
@@ -413,21 +399,17 @@ html, body {
         font-size: 3.23vh;
     }
 
-    #vidcontainer > video {
-        left: 56%;
-    }
-
-    .descrHdr {
-        font-size: 2vh;
-    }
-
-    #descr {
-        top: 4%; 
-        left: 36.5%;
+    .center-fit-home-pics {
+        padding-top: 8%;
     }
 
     #nameHdr {
-        left: 35%;
+        margin-top: 14px;
+        font-size: 5.5vh;
+    }
+
+    .descrHdr {
+        font-size: 2.5vh;
     }
 }
 
@@ -445,21 +427,11 @@ html, body {
         }
 
         #nameHdr {
-            left: 28%;
-            font-size: 3.5vh;
-        }
-
-        #vidcontainer > video {
-            left: 60%;
+            font-size: 5.5vh;
         }
 
         .descrHdr {
-            font-size: 2vh;
-        }
-    
-        #descr {
-            top: 2.5%; 
-            left: 8.5%;
+            font-size: 2.3vh;
         }
 }
 
@@ -481,26 +453,16 @@ html, body {
         top: 47%;
     }
 
+    .center-fit-home-pics {
+        padding-top: 14%;
+    }
+
     #nameHdr {
-        left: 24%;
-        font-size: 4.5vh;
+        font-size: 5.5vh;
     }
 
     .descrHdr {
-        font-size: 1.8vh;
-    }
-
-    #descr {
-        top: 1%; 
-        left: 14%;
-    }
-
-    #vidcontainer > video {
-        left: 58%;
-    }
-
-    .center-fit-home-pics {
-        padding-top: 12%;
+        font-size: 2.1vh;
     }
 }
 
@@ -510,7 +472,7 @@ html, body {
     and (orientation: portrait)
     and (-webkit-min-device-pixel-ratio: 2) {
     #hdrLeft {
-        left: 5%;
+        left: 4%;
         bottom: 47.5%;  
     }
  
@@ -530,27 +492,17 @@ html, body {
     #bio-img {
         margin-bottom: 0%;
     }
- 
-    #p-resume, #resume {
-        width: 43%;
-    }
 
-    #vidcontainer > video {
-        left: 55%;
-    }
-
-    .descrHdr {
-        font-size: 1.5vh;
-    }
-
-    #descr {
-        top: 0%; 
-        left: 22%;
+    .center-fit-home-pics {
+        padding-top: 15%;
     }
 
     #nameHdr {
-        font-size: 5vh;
-        left: 24%;
+        font-size: 5.5vh;
+    }
+
+    .descrHdr {
+        font-size: 2.2vh;
     }
 }
 
@@ -560,12 +512,12 @@ html, body {
     and (orientation: landscape)
     and (-webkit-min-device-pixel-ratio: 2) {
     #hdrLeft {
-        left: 1%;
+        left: 3%;
         bottom: 47.5%;  
     }
  
     #hdrDown {
-        bottom: 5%;
+        bottom: 4%;
     }
  
     #hdrRight {
@@ -576,28 +528,21 @@ html, body {
     #bio-img {
         margin-bottom: 0%;
     }
- 
-    #p-resume, #resume {
-        width: 43%;
-    }
-
-    #vidcontainer > video {
-        left: 54.5%;
-    }
 
     .descrHdr {
         font-size: 2.2vh;
     }
 
-    #descr {
-        top: 1%; 
-        left: 30%;
+    .center-fit-home-pics {
+        padding-top: 9%;
     }
 
     #nameHdr {
-        font-size: 5vh;
-        margin-top: 5px;
-        left: 37%;
+        font-size: 5.5vh;
+    }
+
+    .descrHdr {
+        font-size: 2.3vh;
     }
 }
 
@@ -618,11 +563,6 @@ html, body {
             max-width: 100%;
             height: 100%;
             margin: auto;
-        }
-
-        #p-resume, #resume {
-            margin-top: 60px;
-            width: 40%;
         }
 }
 

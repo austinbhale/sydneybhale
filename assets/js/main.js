@@ -11,14 +11,8 @@ var video;
 $(document).ready(function() {
   
   // Separate compatible font for ios devices.
-  if (iOS) {
-    $('#vidcontainer > video').css("top", "43%");
-    // $('#arrows h4[id^="hdr"]').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
-    // "font-stretch":"condensed", "font-weight":"bold"});
-    // $('#nameHdr').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
-    // "font-stretch":"condensed", "font-weight":"bold"});
-    // $('#descr').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
-    // "font-stretch":"condensed", "font-weight":"bold"});
+  if (iOS && isSafari) {
+    // $('#vidcontainer > video').css("top", "43%");
   }
 
   $("#arrDown").css("margin-right", (-($("#arrDown").width())/2));
@@ -39,8 +33,6 @@ $(document).ready(function() {
       $("#descr2").animateCss('fadeInUp', function() {
         $("#descr3").css("visibility", "visible");
         $("#descr3").animateCss('fadeInUp', function() {
-          // $("#descr4").css("visibility", "visible");
-          // $("#descr4").animateCss('fadeInUp', function() {
             for (var i=1; i<=3; i++) {
               $("#descrBar"+i).css("visibility", "visible");
               $("#descrBar"+i).animateCss('fadeIn');
@@ -51,7 +43,6 @@ $(document).ready(function() {
             $('#arrows h4[id^="hdr"]').css("visibility", "visible");
             $("#arrows").animateCss('fadeIn', function() {ready = true;});
           });
-        // });
       });
     });
   });
@@ -164,20 +155,7 @@ function setArrowChoice(e) {
             $('#bio-page').css("display", "none");
           });
           $('#indexPage').animateCss('slideInDown', function() {helper();});
-        } 
-        // else {
-      //     $('#wrapper').css("background-color", "black");
-      //       removeArrows();
-      //       $('#indexPage').animateCss('slideOutDown', function() {    
-      //           x.style.visibility = "hidden";
-      //           $('#arrDown').css("visibility", "visible");
-      //           $('#arrDown').animateCss('fadeIn')
-      //           $('#vidcontainer').css("display", "block");
-      //           $('#vidcontainer').animateCss('fadeIn');
-      //           video.play();
-      //       });
-      //     back = true; home_return = false;
-      //   }
+        }
         break;
       default: break;
     }
