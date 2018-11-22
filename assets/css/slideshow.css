@@ -30,6 +30,10 @@
   text-decoration: none !important;
 }
 
+.prev:hover, .next:hover {
+  color: white;
+}
+
 .prev {
   left: 47%;
 }
@@ -40,7 +44,7 @@
 
 .numbertext {
   color: #a3a2a3;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;

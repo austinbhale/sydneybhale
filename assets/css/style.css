@@ -7,29 +7,27 @@ html, body {
     position: relative;
 }
 
-#bg, #bg1, #bg2 {
+#bg, #bg1, #bg2, #bg3 {
     animation-duration: 1s;
     -vendor-animation-duration: 1s;
+    pointer-events: none; 
 }
 
 #bg {
     display: block;
-    pointer-events: none; 
 }
 
-#bg1, #bg2 {
+#bg1, #bg2, #bg3 {
     display: none;
-    pointer-events: none; 
 }
 
 
 #nameHdr {
     visibility: hidden; 
     position: absolute; 
-    top: 6.5%; 
-    right: 7%; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-    font-size: 8.5vh;
+    left: 38.5%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 7.5vh;
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
@@ -39,9 +37,10 @@ html, body {
     text-align: center;
     visibility: hidden; 
     position: absolute; 
-    top: 18%; 
-    right: 3%;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    top: 6%; 
+    left: 37%;
+    font-size: 7vh;
+    font-family: 'Raleway', sans-serif;
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
@@ -55,9 +54,8 @@ html, body {
     display: none;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100vw;
-    height: 90vh;
+    max-width: 100%;
+    height: 100vh;
     animation-duration: 0.5s;
     -vendor-animation-duration: 0.5s;
     background-color: black;
@@ -66,23 +64,11 @@ html, body {
 #vidcontainer > video {
     display: block;
     position: absolute;
-    left: 50%;
+    left: 53.5%;
     top: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     z-index: 1;
-}
-
-@media screen and (max-aspect-ratio: 1280/720) {
-    #vidcontainer > video {
-        height: 80%;
-    }
-}
-    
-@media screen and (min-aspect-ratio: 1280/720) {
-    #vidcontainer > video {
-        width: 100%;
-    }
 }
 
 #wrapper {
@@ -113,7 +99,14 @@ html, body {
     right: 5%; 
     bottom: 3%;
 }
-   
+ 
+.center-fit-home-pics {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    padding-top: 8%;
+}
+
 .center-fit {
     max-width: 100%;
     max-height: 100%;
@@ -130,8 +123,8 @@ html, body {
     bottom: 50%;
     width: 20px;
     height: 20px;
-    border-top: 4px solid #a3a2a3;
-    border-right: 4px solid #a3a2a3;
+    border-top: 2px solid #a3a2a3;
+    border-right: 2px solid #a3a2a3;
     border-left: none;
     border-bottom: none;
     transform: rotate(45deg);
@@ -148,8 +141,8 @@ html, body {
     bottom: 1%;
     width: 20px;
     height: 20px;
-    border-top: 4px solid #a3a2a3;
-    border-right: 4px solid #a3a2a3;
+    border-top: 2px solid #a3a2a3;
+    border-right: 2px solid #a3a2a3;
     border-left: none;
     border-bottom: none;
     transform: rotate(135deg);
@@ -166,8 +159,8 @@ html, body {
     bottom: 50%;
     width: 20px;
     height: 20px;
-    border-top: 4px solid #a3a2a3;
-    border-right: 4px solid #a3a2a3;
+    border-top: 2px solid #a3a2a3;
+    border-right: 2px solid #a3a2a3;
     border-left: none;
     border-bottom: none;
     transform: rotate(225deg);
@@ -184,8 +177,8 @@ html, body {
     top: 1%;
     width: 20px;
     height: 20px;
-    border-top: 4px solid #a3a2a3;
-    border-right: 4px solid #a3a2a3;
+    border-top: 2px solid #a3a2a3;
+    border-right: 2px solid #a3a2a3;
     border-left: none;
     border-bottom: none;
     transform: rotate(315deg);
@@ -198,9 +191,9 @@ html, body {
 
 #hdrRight {
     color: #a3a2a3; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Raleway', sans-serif;
     position: absolute; 
-    right: 2%; 
+    right: 3%; 
     bottom: 47%; 
     transform: rotate(90deg); 
     -webkit-transform: rotate(90deg); 
@@ -209,7 +202,7 @@ html, body {
 
 #hdrDown {
     color: #a3a2a3; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Raleway', sans-serif;
     position: absolute; 
     right: 50%; 
     bottom: 4%;
@@ -217,21 +210,13 @@ html, body {
 
 #hdrLeft {
     color: #a3a2a3;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    font-family: 'Raleway', sans-serif;
     position: absolute; 
-    left: 2.5%; 
+    left: 2%; 
     top: 47%; 
     transform: rotate(-90deg); 
     -webkit-transform: rotate(-90deg); 
     -moz-transform: rotate(-90deg);
-}
-
-#hdrUp {
-    color: #a3a2a3; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    position: absolute; 
-    right: 50.2%; 
-    top: 4%;
 }
 
 @media only screen and (min-width: 769px) {
@@ -246,11 +231,6 @@ html, body {
     }
 
     .arrowLeft:hover {
-        border-top: 4px solid rgb(226, 219, 219);
-        border-right: 4px solid rgb(226, 219, 219);
-    }
-
-    .arrowUp:hover {
         border-top: 4px solid rgb(226, 219, 219);
         border-right: 4px solid rgb(226, 219, 219);
     }
@@ -325,21 +305,21 @@ html, body {
 #bio-hdr {
     margin-bottom: 0px !important; 
     margin-top: 0px !important; 
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 #bio-img {
     width: 30%;
     float: left; 
+    border-radius: 3%;
     margin-right: 2%; 
-    border-radius: 50%;
     margin-bottom: 1%;
 }
 
 #bio-words {
     text-align: left; 
     color:black; 
-    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-family: 'Raleway', sans-serif;
     float: right;
     font-size: 3.0vh;
 }
@@ -412,8 +392,8 @@ html, body {
     and (max-width: 824px)
     and (orientation: landscape) {
     #hdrLeft {
-        left: 2%;
-        bottom: 49%;  
+        left: 1.5%;
+        bottom: 48.5%;  
     }
  
     #hdrUp {
@@ -425,12 +405,30 @@ html, body {
     }
  
     #hdrRight {
-        right: 1%;
+        right: 3%;
         top: 47%;
     }
  
     #bio-words {
         font-size: 3.23vh;
+    }
+
+    #vidcontainer > video {
+        left: 56%;
+    }
+
+    .descrHdr {
+        font-size: 2vh;
+    }
+
+    #descr {
+        top: 4%; 
+        left: 36.5%;
+    }
+
+    #nameHdr {
+        left: 35%;
+        margin-top: 5px;
     }
 }
 
@@ -443,13 +441,26 @@ html, body {
         }
 
         #hdrRight {
-            right: 2%;
+            right: 5%;
             top: 47%;
         }
 
         #nameHdr {
-            top: 7.5%;
-            font-size: 6vh;
+            left: 28%;
+            font-size: 3.5vh;
+        }
+
+        #vidcontainer > video {
+            left: 60%;
+        }
+
+        .descrHdr {
+            font-size: 2vh;
+        }
+    
+        #descr {
+            top: 2.5%; 
+            left: 8.5%;
         }
 }
 
@@ -462,26 +473,35 @@ html, body {
         bottom: 48%;  
     }
  
-    #hdrUp {
-        top: 4%;
-    }
- 
     #hdrDown {
         bottom: 4%;
     }
  
     #hdrRight {
-        right: 1.5%;
+        right: 5%;
         top: 47%;
     }
 
     #nameHdr {
-        top: 7.5%;
-        font-size: 6.5vh;
+        left: 19%;
+        font-size: 4.5vh;
     }
 
     .descrHdr {
         font-size: 1.8vh;
+    }
+
+    #descr {
+        top: 2.5%; 
+        left: 9%;
+    }
+
+    #vidcontainer > video {
+        left: 58%;
+    }
+
+    .center-fit-home-pics {
+        padding-top: 12%;
     }
 }
 
@@ -495,16 +515,12 @@ html, body {
         bottom: 47.5%;  
     }
  
-    #hdrUp {
-        top: 3%;
-    }
- 
     #hdrDown {
         bottom: 3%;
     }
  
     #hdrRight {
-        right: 4%;
+        right: 5.5%;
         top: 47%;
     }
  
@@ -519,6 +535,25 @@ html, body {
     #p-resume, #resume {
         width: 43%;
     }
+
+    #vidcontainer > video {
+        left: 55%;
+    }
+
+    .descrHdr {
+        font-size: 1.5vh;
+    }
+
+    #descr {
+        top: 0%; 
+        left: 22%;
+    }
+
+    #nameHdr {
+        font-size: 5vh;
+        left: 24%;
+        margin-top: 5px;
+    }
 }
 
 @media only screen 
@@ -531,16 +566,12 @@ html, body {
         bottom: 47.5%;  
     }
  
-    #hdrUp {
-        top: 5%;
-    }
- 
     #hdrDown {
         bottom: 5%;
     }
  
     #hdrRight {
-        right: 1%;
+        right: 4%;
         top: 47%;
     }
  
@@ -550,6 +581,25 @@ html, body {
  
     #p-resume, #resume {
         width: 43%;
+    }
+
+    #vidcontainer > video {
+        left: 54.5%;
+    }
+
+    .descrHdr {
+        font-size: 2.2vh;
+    }
+
+    #descr {
+        top: 1%; 
+        left: 30%;
+    }
+
+    #nameHdr {
+        font-size: 5vh;
+        margin-top: 5px;
+        left: 37%;
     }
 }
 
@@ -575,10 +625,6 @@ html, body {
         #p-resume, #resume {
             margin-top: 60px;
             width: 40%;
-        }
-
-        #descr {
-            right: 2%;
         }
 }
 
