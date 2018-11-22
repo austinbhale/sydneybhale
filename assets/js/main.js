@@ -12,7 +12,7 @@ $(document).ready(function() {
   
   // Separate compatible font for ios devices.
   if (iOS && isSafari) {
-    // $('#vidcontainer > video').css("top", "43%");
+    $('#vidcontainer > video').css("top", "43%");
   }
 
   $("#arrDown").css("margin-right", (-($("#arrDown").width())/2));
@@ -55,7 +55,7 @@ $(document).ready(function() {
     }
 });
 
-$(window).on("orientationchange", fixIOSPlaceholderBug);
+// $(window).on("orientationchange", fixIOSPlaceholderBug);
 var change = false; var home_return = false;
 // Reload if mobile user changes orientation on content, returns to home, and
 // changes orientation once again. (IOS Safari compatibility)

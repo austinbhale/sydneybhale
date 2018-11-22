@@ -109,7 +109,6 @@ html, body {
     max-width: 100%;
     max-height: 100%;
     margin: auto;
-    /* position: fixed; */
     padding-top: 7%;
 }
 
@@ -427,7 +426,7 @@ html, body {
         }
 
         #nameHdr {
-            font-size: 5.5vh;
+            font-size: 5vh;
         }
 
         .descrHdr {
@@ -458,7 +457,7 @@ html, body {
     }
 
     #nameHdr {
-        font-size: 5.5vh;
+        font-size: 5vh;
     }
 
     .descrHdr {
