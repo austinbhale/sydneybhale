@@ -31,6 +31,8 @@ html, body {
     color: #a3a2a3;
     animation-duration: 3s;
     -vendor-animation-duration: 3s;
+    margin-top: 5px;
+
 }
 
 #descr {
@@ -244,22 +246,6 @@ html, body {
     user-select: none;
 }
 
-#p-container {
-    display: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-#portfolios {
-    clear:both; 
-    width: 80%; 
-    height: 100%;
-    margin-left: 10%; 
-    margin-right: 10%;
-    text-align:center;
-}
-
 .divider{
     width:10%;
     height:auto;
@@ -344,7 +330,7 @@ html, body {
     }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
     #p-resume, #resume {
         width: 70%;
         height: 38%;
@@ -361,6 +347,20 @@ html, body {
     #p-hdr, #p-hdrLow {
         font-size: 15px;
         margin-bottom: 0px !important; 
+    }
+
+    .descrHdr {
+        font-size: 1.7vh;
+    }
+
+    #descr {
+        top: 1%; 
+        left: 23%;
+    }
+
+    #nameHdr {
+        left: 25%;
+        font-size: 5.5vh;
     }
 }
 
@@ -428,7 +428,6 @@ html, body {
 
     #nameHdr {
         left: 35%;
-        margin-top: 5px;
     }
 }
 
@@ -483,7 +482,7 @@ html, body {
     }
 
     #nameHdr {
-        left: 19%;
+        left: 22%;
         font-size: 4.5vh;
     }
 
@@ -492,8 +491,8 @@ html, body {
     }
 
     #descr {
-        top: 2.5%; 
-        left: 9%;
+        top: 1%; 
+        left: 12%;
     }
 
     #vidcontainer > video {
@@ -552,7 +551,6 @@ html, body {
     #nameHdr {
         font-size: 5vh;
         left: 24%;
-        margin-top: 5px;
     }
 }
 
