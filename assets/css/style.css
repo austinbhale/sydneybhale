@@ -482,7 +482,7 @@ html, body {
     }
 
     #nameHdr {
-        left: 22%;
+        left: 24%;
         font-size: 4.5vh;
     }
 
@@ -492,7 +492,7 @@ html, body {
 
     #descr {
         top: 1%; 
-        left: 12%;
+        left: 14%;
     }
 
     #vidcontainer > video {

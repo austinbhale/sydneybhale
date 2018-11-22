@@ -12,7 +12,7 @@ $(document).ready(function() {
   
   // Separate compatible font for ios devices.
   if (iOS) {
-    $('#vidcontainer > video').css("top", "40%");
+    $('#vidcontainer > video').css("top", "43%");
     // $('#arrows h4[id^="hdr"]').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
     // "font-stretch":"condensed", "font-weight":"bold"});
     // $('#nameHdr').css({"font-family":"\"Futura-CondensedExtraBold\", Futura, sans-serif",
