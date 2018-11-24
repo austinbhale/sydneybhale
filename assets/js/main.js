@@ -12,7 +12,7 @@ $(document).ready(function() {
   
   // Separate compatible font for ios devices.
   if (iOS && isSafari) {
-    // $('#vidcontainer > video').css("top", "48%");
+    $('#vidcontainer > video').css("top", "48%");
   }
 
   $("#arrDown").css("margin-right", (-($("#arrDown").width())/2));

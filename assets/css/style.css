@@ -441,7 +441,7 @@ html, body {
     and (max-width: 415px)
     and (orientation: portrait) {
     #hdrLeft {
-        left: 3%;
+        left: 2.5%;
         bottom: 48%;  
     }
  
