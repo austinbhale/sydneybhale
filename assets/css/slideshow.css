@@ -8,19 +8,20 @@
   animation-duration: 0.5s;
   -vendor-animation-duration: 0.5s;
 }
-  
+
 .mySlides {
   display: none;
   height: 80%;
   max-width: 100%;
   text-align: center;
 }
-  
+
 .cursor {
   cursor: pointer;
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: relative;
   user-select: none;
@@ -30,33 +31,34 @@
   text-decoration: none !important;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   color: white;
 }
 
 .prev {
   left: 47%;
 }
-  
+
 .next {
   left: 51%;
 }
 
 .numbertext {
   color: #a3a2a3;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
 }
-  
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-  
+
 .column {
   border-top: 2px solid #a3a2a3;
   border-bottom: 2px solid #a3a2a3;
@@ -64,65 +66,55 @@
   overflow: hidden;
   width: 8.33%;
 }
-  
+
 /* Transparency effect */
 .demo {
-    opacity: 0.7;
-}
-  
-.active,
-.demo:hover {
-    opacity: 1;
+  opacity: 0.7;
 }
 
-.keep-img, .stretch-img {
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.keep-img,
+.stretch-img {
   max-width: 100%;
   height: 100%;
   margin: auto;
 }
 
-@media only screen 
-and (max-width: 425px) 
-and (orientation: portrait) {
+@media only screen and (max-width: 425px) and (orientation: portrait) {
   .stretch-img {
     height: 50%;
     width: 100%;
-    top: 30%; 
-    position: relative; 
+    top: 30%;
+    position: relative;
   }
 }
 
-@media only screen 
-  and (min-width: 768px) 
-  and (max-width: 1025px) 
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .stretch-img {
-      height: 65%;
-      width: 100%;
-      top: 27%; 
-      position: relative; 
-    }
+@media only screen and (min-width: 768px) and (max-width: 1025px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .stretch-img {
+    height: 65%;
+    width: 100%;
+    top: 27%;
+    position: relative;
   }
+}
 
-  @supports (-webkit-overflow-scrolling: touch) {
-  @media only screen
-  and (max-width: 824px)
-  and (orientation: landscape) {
+@supports (-webkit-overflow-scrolling: touch) {
+  @media only screen and (max-width: 824px) and (orientation: landscape) {
     #slideshow {
       height: 98%;
     }
   }
 }
 
-  @supports not (-webkit-overflow-scrolling: touch)
-     {
-    /* NOT IOS DEVICES */
-      @media only screen
-      and (max-width: 824px)
-      and (orientation: landscape) {
-        #slideshow {
-          height: 97%;
-        }
-      }
+@supports not (-webkit-overflow-scrolling: touch) {
+  /* NOT IOS DEVICES */
+  @media only screen and (max-width: 824px) and (orientation: landscape) {
+    #slideshow {
+      height: 97%;
+    }
   }
+}
