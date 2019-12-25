@@ -3,407 +3,258 @@
 Copyright (c) 2018 Austin Hale -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sydney Hale</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Austin Hale" />
-    <meta name="description" content="Personal site of Sydney Hale" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/slideshow.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Archivo"
-    />
-    <!-- Bootstrap (https://getbootstrap.com)
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sydney Hale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Austin Hale" />
+  <meta name="description" content="Personal site of Sydney Hale" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/slideshow.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo" />
+  <!-- Bootstrap (https://getbootstrap.com)
     Copyright (c) 2011-2018 Twitter, Inc.
     Copyright (c) 2011-2018 The Bootstrap Authors
     MIT License (https://raw.githubusercontent.com/twbs/bootstrap/master/LICENSE)-->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
-    />
-    <link rel="preload" href="assets/media/dance-pic6.jpg" as="image" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-      /*
-       * Animate.css (https://daneden.github.io/animate.css/)
-       * Copyright 2018 Daniel Eden
-       * MIT License (https://raw.githubusercontent.com/daneden/animate.css/master/LICENSE)
-       */
-      $.fn.extend({
-        animateCss: function(animationName, callback) {
-          var animationEnd = (function(el) {
-            var animations = {
-              animation: "animationend",
-              OAnimation: "oAnimationEnd",
-              MozAnimation: "mozAnimationEnd",
-              WebkitAnimation: "webkitAnimationEnd"
-            };
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" />
+  <link rel="preload" href="assets/media/dance-pic6.jpg" as="image" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    /*
+     * Animate.css (https://daneden.github.io/animate.css/)
+     * Copyright 2018 Daniel Eden
+     * MIT License (https://raw.githubusercontent.com/daneden/animate.css/master/LICENSE)
+     */
+    $.fn.extend({
+      animateCss: function (animationName, callback) {
+        var animationEnd = (function (el) {
+          var animations = {
+            animation: "animationend",
+            OAnimation: "oAnimationEnd",
+            MozAnimation: "mozAnimationEnd",
+            WebkitAnimation: "webkitAnimationEnd"
+          };
 
-            for (var t in animations) {
-              if (el.style[t] !== undefined) {
-                return animations[t];
-              }
+          for (var t in animations) {
+            if (el.style[t] !== undefined) {
+              return animations[t];
             }
-          })(document.createElement("div"));
+          }
+        })(document.createElement("div"));
 
-          this.addClass("animated " + animationName).one(
-            animationEnd,
-            function() {
-              $(this).removeClass("animated " + animationName);
+        this.addClass("animated " + animationName).one(
+          animationEnd,
+          function () {
+            $(this).removeClass("animated " + animationName);
 
-              if (typeof callback === "function") callback();
-            }
-          );
+            if (typeof callback === "function") callback();
+          }
+        );
 
-          return this;
-        }
-      });
-    </script>
-  </head>
-  <body>
-    <div id="wrapper">
-      <!--Dance reel content-->
-      <div id="vidcontainer" class="imgbox">
-        <video
-          autoplay
-          controls
-          muted
-          loop
-          playsinline
-          id="myVideo"
-          class="center-fit"
-        >
-          <source src="assets/media/vidtest.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        return this;
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <!--Dance reel content-->
+    <div id="vidcontainer" class="imgbox">
+      <video autoplay controls muted loop playsinline id="myVideo" class="center-fit">
+        <source src="assets/media/vidtest.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!--Picture slideshow content-->
+    <div id="slideshow">
+      <!-- Full-width images with number text -->
+      <div class="mySlides" id="slide0">
+        <img id="slide-pic0" class="stretch-img" src="assets/media/dance-pic3.jpg" />
+        <div class="numbertext">1 / 12</div>
       </div>
-      <!--Picture slideshow content-->
-      <div id="slideshow">
-        <!-- Full-width images with number text -->
-        <div class="mySlides" id="slide0">
-          <img
-            id="slide-pic0"
-            class="stretch-img"
-            src="assets/media/dance-pic3.jpg"
-          />
-          <div class="numbertext">1 / 12</div>
-        </div>
 
-        <div class="mySlides" id="slide1">
-          <img
-            id="slide-pic1"
-            class="keep-img"
-            src="assets/media/dance-pic10.jpg"
-          />
-          <div class="numbertext">2 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide2">
-          <img
-            id="slide-pic2"
-            class="stretch-img"
-            src="assets/media/dance-pic0.jpg"
-          />
-          <div class="numbertext">3 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide3">
-          <img
-            id="slide-pic3"
-            class="keep-img"
-            src="assets/media/dance-pic4.jpg"
-          />
-          <div class="numbertext">4 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide4">
-          <img
-            id="slide-pic4"
-            class="stretch-img"
-            src="assets/media/dance-pic5.jpg"
-          />
-          <div class="numbertext">5 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide5">
-          <img
-            id="slide-pic5"
-            class="stretch-img"
-            src="assets/media/dance-pic7.jpg"
-          />
-          <div class="numbertext">6 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide6">
-          <img
-            id="slide-pic6"
-            class="keep-img"
-            src="assets/media/dance-pic8.jpg"
-          />
-          <div class="numbertext">7 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide7">
-          <img
-            id="slide-pic7"
-            class="stretch-img"
-            src="assets/media/self-pic0.jpg"
-          />
-          <div class="numbertext">8 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide8">
-          <img
-            id="slide-pic8"
-            class="keep-img"
-            src="assets/media/self-pic1.jpg"
-          />
-          <div class="numbertext">9 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide9">
-          <img
-            id="slide-pic9"
-            class="keep-img"
-            src="assets/media/self-pic2.jpg"
-          />
-          <div class="numbertext">10 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide10">
-          <img
-            id="slide-pic10"
-            class="keep-img"
-            src="assets/media/team-pic0.jpg"
-          />
-          <div class="numbertext">11 / 12</div>
-        </div>
-
-        <div class="mySlides" id="slide11">
-          <img
-            id="slide-pic11"
-            class="stretch-img"
-            src="assets/media/team-pic1.jpg"
-          />
-          <div class="numbertext">12 / 12</div>
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        <!-- Thumbnail images -->
-        <div class="row">
-          <div class="column" id="column0">
-            <img
-              id="base-img"
-              class="demo cursor"
-              src="assets/media/dance-pic3.jpg"
-              style="width: 100%"
-              onclick="currentSlide(1);"
-            />
-          </div>
-          <div class="column" id="column1">
-            <img
-              class="demo cursor"
-              src="assets/media/dance-pic10.jpg"
-              style="width:100%;"
-              onclick="currentSlide(2);"
-            />
-          </div>
-          <div class="column" id="column2">
-            <img
-              class="demo cursor"
-              src="assets/media/dance-pic0.jpg"
-              style="width:100%"
-              onclick="currentSlide(3);"
-            />
-          </div>
-          <div class="column" id="column3">
-            <img
-              class="demo cursor"
-              src="assets/media/dance-pic4.jpg"
-              style="width:100%"
-              onclick="currentSlide(4);"
-            />
-          </div>
-          <div class="column" id="column4">
-            <img
-              class="demo cursor"
-              src="assets/media/dance-pic5.jpg"
-              style="width:100%"
-              onclick="currentSlide(5);"
-            />
-          </div>
-          <div class="column" id="column5">
-            <img
-              class="demo cursor"
-              src="assets/media/dance-pic7.jpg"
-              style="width:100%"
-              onclick="currentSlide(6);"
-            />
-          </div>
-          <div class="column" id="column6">
-            <img
-              class="demo cursor"
-              src="assets/media/dance-pic8.jpg"
-              style="width:100%"
-              onclick="currentSlide(7);"
-            />
-          </div>
-          <div class="column" id="column7">
-            <img
-              class="demo cursor"
-              src="assets/media/self-pic0.jpg"
-              style="width:100%"
-              onclick="currentSlide(8);"
-            />
-          </div>
-          <div class="column" id="column8">
-            <img
-              class="demo cursor"
-              src="assets/media/self-pic1.jpg"
-              style="width:100%"
-              onclick="currentSlide(9);"
-            />
-          </div>
-          <div class="column" id="column9">
-            <img
-              class="demo cursor"
-              src="assets/media/self-pic2.jpg"
-              style="width:100%"
-              onclick="currentSlide(10);"
-            />
-          </div>
-          <div class="column" id="column10">
-            <img
-              class="demo cursor"
-              src="assets/media/team-pic0.jpg"
-              style="width:100%"
-              onclick="currentSlide(11);"
-            />
-          </div>
-          <div class="column" id="column11">
-            <img
-              class="demo cursor"
-              src="assets/media/team-pic1.jpg"
-              style="width:100%"
-              onclick="currentSlide(12);"
-            />
-          </div>
-        </div>
+      <div class="mySlides" id="slide1">
+        <img id="slide-pic1" class="keep-img" src="assets/media/dance-pic10.jpg" />
+        <div class="numbertext">2 / 12</div>
       </div>
-      <!--Biography content-->
-      <div id="bio-page">
-        <div id="bio-content">
-          <div class="page-header">
-            <h2 id="bio-hdr" class="selectDisable">About Me</h2>
-          </div>
-          <br id="br0" /><br id="br1" />
-          <p id="bio-words" class="selectDisable">
-            <img id="bio-img" src="assets/media/self-pic0.jpg" /> Sydney Hale is
-            a performer, teacher, choreographer, and certified Pilates
-            instructor currently residing in Brooklyn, New York. In 2018, she
-            graduated Summa Cum Laude with a B.F.A. in Dance Performance and is
-            now launching her professional career in New York City. Originally
-            from North Carolina, she found her passion for movement at a young
-            age. <br /><br />
-            After deciding to pursue a career in dance, she attended the
-            University at Buffalo where she received extensive training in
-            ballet, tap, jazz, modern, contemporary styles, and more. With an
-            interest in learning more about movement efficiency and body
-            mechanics, she proceeded toward earning her Pilates certification to
-            educate others on how to become their strongest, most confident
-            selves. <br /><br />
-            Whether it be through performing, choreographing, or teaching,
-            Sydney aims to share herself authentically as both an artist and
-            educator to empower others and help them discover what makes them
-            feel most alive.
-          </p>
-        </div>
-      </div>
-      <!--Index Page-->
-      <div id="indexPage" class="imgbox selectDisable">
-        <h1 id="nameHdr">SYDNEY HALE</h1>
-        <div id="descr">
-          <h5 id="descr1" class="descrHdr" style="display: inline-block">
-            Performer
-          </h5>
-          <h5 id="descrBar1" class="descrHdr" style="display: inline-block">
-            |
-          </h5>
-          <h5 id="descr2" class="descrHdr" style="display: inline-block">
-            Choreographer
-          </h5>
-          <h5 id="descrBar2" class="descrHdr" style="display: inline-block">
-            |
-          </h5>
-          <h5 id="descr3" class="descrHdr" style="display: inline-block">
-            Pilates Instructor
-          </h5>
-        </div>
-        <img
-          class="center-fit-home-pics"
-          id="bg"
-          src="assets/media/syd-hale-28.jpg"
-        />
-        <img
-          class="center-fit-home-pics"
-          id="bg1"
-          src="assets/media/dance-pic6.jpg"
-        />
-        <img
-          class="center-fit-home-pics"
-          id="bg2"
-          src="assets/media/syd-hale-29.jpg"
-        />
-        <img
-          class="center-fit-home-pics"
-          id="bg3"
-          src="assets/media/dance-pic1.jpg"
-        />
-        <div id="icon-ctr">
-          <a target="_blank" href="mailto:sbhale@buffalo.edu?subject=Contact">
-            <img
-              src="assets/icons/mail-logo.png"
-              style="width: 22px; height: 23px;"
-          /></a>
 
-          <a target="_blank" href="http://www.instagram.com/sydneyhale">
-            <img
-              src="assets/icons/ig-logo.png"
-              style="width: 30px; height: 29px;"
-          /></a>
-
-          <a target="_blank" href="http://www.facebook.com/sydney.hale.108">
-            <img
-              src="assets/icons/fb-logo.png"
-              style="width: 21px; height: 19px;"
-          /></a>
-        </div>
+      <div class="mySlides" id="slide2">
+        <img id="slide-pic2" class="stretch-img" src="assets/media/dance-pic0.jpg" />
+        <div class="numbertext">3 / 12</div>
       </div>
-      <!--Arrows with descriptions-->
-      <div id="arrows">
-        <button id="arrRight" class="arrowRight"></button>
-        <button id="arrDown" class="arrowDown"></button>
-        <button id="arrLeft" class="arrowLeft"></button>
-        <button id="arrUp" class="arrowUp"></button>
-        <h4 id="hdrRight" class="selectDisable">Reel</h4>
-        <h4 id="hdrDown" class="selectDisable">About</h4>
-        <h4 id="hdrLeft" class="selectDisable">Photos</h4>
+
+      <div class="mySlides" id="slide3">
+        <img id="slide-pic3" class="keep-img" src="assets/media/dance-pic4.jpg" />
+        <div class="numbertext">4 / 12</div>
+      </div>
+
+      <div class="mySlides" id="slide4">
+        <img id="slide-pic4" class="stretch-img" src="assets/media/dance-pic5.jpg" />
+        <div class="numbertext">5 / 12</div>
+      </div>
+
+      <div class="mySlides" id="slide5">
+        <img id="slide-pic5" class="stretch-img" src="assets/media/dance-pic7.jpg" />
+        <div class="numbertext">6 / 12</div>
+      </div>
+
+      <div class="mySlides" id="slide6">
+        <img id="slide-pic6" class="keep-img" src="assets/media/dance-pic8.jpg" />
+        <div class="numbertext">7 / 12</div>
+      </div>
+
+      <div class="mySlides" id="slide7">
+        <img id="slide-pic7" class="stretch-img" src="assets/media/self-pic0.jpg" />
+        <div class="numbertext">8 / 12</div>
+      </div>
+
+      <div class="mySlides" id="slide8">
+        <img id="slide-pic8" class="keep-img" src="assets/media/self-pic1.jpg" />
+        <div class="numbertext">9 / 12</div>
+      </div>
+
+      <div class="mySlides" id="slide9">
+        <img id="slide-pic9" class="keep-img" src="assets/media/self-pic2.jpg" />
+        <div class="numbertext">10 / 12</div>
+      </div>
+
+      <div class="mySlides" id="slide10">
+        <img id="slide-pic10" class="keep-img" src="assets/media/team-pic0.jpg" />
+        <div class="numbertext">11 / 12</div>
+      </div>
+
+      <div class="mySlides" id="slide11">
+        <img id="slide-pic11" class="stretch-img" src="assets/media/team-pic1.jpg" />
+        <div class="numbertext">12 / 12</div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <!-- Thumbnail images -->
+      <div class="row">
+        <div class="column" id="column0">
+          <img id="base-img" class="demo cursor" src="assets/media/dance-pic3.jpg" style="width: 100%"
+            onclick="currentSlide(1);" />
+        </div>
+        <div class="column" id="column1">
+          <img class="demo cursor" src="assets/media/dance-pic10.jpg" style="width:100%;" onclick="currentSlide(2);" />
+        </div>
+        <div class="column" id="column2">
+          <img class="demo cursor" src="assets/media/dance-pic0.jpg" style="width:100%" onclick="currentSlide(3);" />
+        </div>
+        <div class="column" id="column3">
+          <img class="demo cursor" src="assets/media/dance-pic4.jpg" style="width:100%" onclick="currentSlide(4);" />
+        </div>
+        <div class="column" id="column4">
+          <img class="demo cursor" src="assets/media/dance-pic5.jpg" style="width:100%" onclick="currentSlide(5);" />
+        </div>
+        <div class="column" id="column5">
+          <img class="demo cursor" src="assets/media/dance-pic7.jpg" style="width:100%" onclick="currentSlide(6);" />
+        </div>
+        <div class="column" id="column6">
+          <img class="demo cursor" src="assets/media/dance-pic8.jpg" style="width:100%" onclick="currentSlide(7);" />
+        </div>
+        <div class="column" id="column7">
+          <img class="demo cursor" src="assets/media/self-pic0.jpg" style="width:100%" onclick="currentSlide(8);" />
+        </div>
+        <div class="column" id="column8">
+          <img class="demo cursor" src="assets/media/self-pic1.jpg" style="width:100%" onclick="currentSlide(9);" />
+        </div>
+        <div class="column" id="column9">
+          <img class="demo cursor" src="assets/media/self-pic2.jpg" style="width:100%" onclick="currentSlide(10);" />
+        </div>
+        <div class="column" id="column10">
+          <img class="demo cursor" src="assets/media/team-pic0.jpg" style="width:100%" onclick="currentSlide(11);" />
+        </div>
+        <div class="column" id="column11">
+          <img class="demo cursor" src="assets/media/team-pic1.jpg" style="width:100%" onclick="currentSlide(12);" />
+        </div>
       </div>
     </div>
-  </body>
-  <script src="assets/js/main.js" type="text/javascript"></script>
+    <!--Biography content-->
+    <div id="bio-page">
+      <div id="bio-content">
+        <div class="page-header">
+          <h2 id="bio-hdr" class="selectDisable">About Me</h2>
+        </div>
+        <br id="br0" /><br id="br1" />
+        <p id="bio-words" class="selectDisable">
+          <img id="bio-img" src="assets/media/self-pic0.jpg" /> Sydney Hale is
+          a performer, teacher, choreographer, and certified Pilates
+          instructor currently residing in Brooklyn, New York.
+          She is one of the founders of <a href="https://vetandadance.com">Vetanda Dance Collective</a>. In 2018, she
+          graduated Summa Cum Laude with a B.F.A. in Dance Performance and is
+          now launching her professional career in New York City. Originally
+          from North Carolina, she found her passion for movement at a young
+          age. <br /><br />
+          After deciding to pursue a career in dance, she attended the
+          University at Buffalo where she received extensive training in
+          ballet, tap, jazz, modern, contemporary styles, and more. With an
+          interest in learning more about movement efficiency and body
+          mechanics, she proceeded toward earning her Pilates certification to
+          educate others on how to become their strongest, most confident
+          selves. <br /><br />
+          Whether it be through performing, choreographing, or teaching,
+          Sydney aims to share herself authentically as both an artist and
+          educator to empower others and help them discover what makes them
+          feel most alive.
+        </p>
+      </div>
+    </div>
+    <!--Index Page-->
+    <div id="indexPage" class="imgbox selectDisable">
+      <h1 id="nameHdr">SYDNEY HALE</h1>
+      <div id="descr">
+        <h5 id="descr1" class="descrHdr" style="display: inline-block">
+          Performer
+        </h5>
+        <h5 id="descrBar1" class="descrHdr" style="display: inline-block">
+          |
+        </h5>
+        <h5 id="descr2" class="descrHdr" style="display: inline-block">
+          Choreographer
+        </h5>
+        <h5 id="descrBar2" class="descrHdr" style="display: inline-block">
+          |
+        </h5>
+        <h5 id="descr3" class="descrHdr" style="display: inline-block">
+          Pilates Instructor
+        </h5>
+      </div>
+      <img class="center-fit-home-pics" id="bg" src="assets/media/syd-hale-28.jpg" />
+      <img class="center-fit-home-pics" id="bg1" src="assets/media/dance-pic6.jpg" />
+      <img class="center-fit-home-pics" id="bg2" src="assets/media/syd-hale-29.jpg" />
+      <img class="center-fit-home-pics" id="bg3" src="assets/media/dance-pic1.jpg" />
+      <div id="icon-ctr">
+        <a target="_blank" href="mailto:sbhale@buffalo.edu?subject=Contact">
+          <img src="assets/icons/mail-logo.png" style="width: 22px; height: 23px;" /></a>
+
+        <a target="_blank" href="http://www.instagram.com/sydneyhale">
+          <img src="assets/icons/ig-logo.png" style="width: 30px; height: 29px;" /></a>
+
+        <a target="_blank" href="http://www.facebook.com/sydney.hale.108">
+          <img src="assets/icons/fb-logo.png" style="width: 21px; height: 19px;" /></a>
+      </div>
+    </div>
+    <!--Arrows with descriptions-->
+    <div id="arrows">
+      <button id="arrRight" class="arrowRight"></button>
+      <button id="arrDown" class="arrowDown"></button>
+      <button id="arrLeft" class="arrowLeft"></button>
+      <button id="arrUp" class="arrowUp"></button>
+      <h4 id="hdrRight" class="selectDisable">Reel</h4>
+      <h4 id="hdrDown" class="selectDisable">About</h4>
+      <h4 id="hdrLeft" class="selectDisable">Photos</h4>
+    </div>
+  </div>
+</body>
+<script src="assets/js/main.js" type="text/javascript"></script>
+
 </html>
