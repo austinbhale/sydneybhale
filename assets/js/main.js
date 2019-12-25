@@ -11,7 +11,7 @@ var iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
 var slide_num = 0;
 var video;
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Separate compatible font for ios devices.
   if (iOS && isSafari) {
     $("#vidcontainer > video").css("top", "48%");
@@ -31,13 +31,13 @@ $(document).ready(function() {
   }
 
   $("#nameHdr").css("visibility", "visible");
-  $("#nameHdr").animateCss("zoomIn", function() {
+  $("#nameHdr").animateCss("zoomIn", function () {
     $("#descr1").css("visibility", "visible");
-    $("#descr1").animateCss("fadeInUp", function() {
+    $("#descr1").animateCss("fadeInUp", function () {
       $("#descr2").css("visibility", "visible");
-      $("#descr2").animateCss("fadeInUp", function() {
+      $("#descr2").animateCss("fadeInUp", function () {
         $("#descr3").css("visibility", "visible");
-        $("#descr3").animateCss("fadeInUp", function() {
+        $("#descr3").animateCss("fadeInUp", function () {
           for (var i = 1; i <= 3; i++) {
             $("#descrBar" + i).css("visibility", "visible");
             $("#descrBar" + i).animateCss("fadeIn");
@@ -46,7 +46,7 @@ $(document).ready(function() {
           $("#arrDown").css("visibility", "visible");
           $("#arrLeft").css("visibility", "visible");
           $('#arrows h4[id^="hdr"]').css("visibility", "visible");
-          $("#arrows").animateCss("fadeIn", function() {
+          $("#arrows").animateCss("fadeIn", function () {
             ready = true;
           });
         });
@@ -77,6 +77,7 @@ function fixIOSPlaceholderBug() {
 }
 
 window.onload = getUserArrowChoice;
+
 function getUserArrowChoice() {
   document.getElementById("arrows").onclick = setArrowChoice;
   video = document.getElementById("myVideo");
@@ -89,20 +90,21 @@ function setArrowChoice(e) {
     // Change header animation duration back to 1.5s.
     $("#nameHdr").css("animation-duration", "1.5s");
     $("#nameHdr").css("-vendor-animation-duration", "1.5s");
+    $("#wrapper").css("overflow", "hidden");
 
     switch (e.target.id) {
       case "arrRight":
         if (back) {
-          $("#slideshow").animateCss("fadeOut", function() {
+          $("#slideshow").animateCss("fadeOut", function () {
             $("#slideshow").css("display", "none");
-            $("#indexPage").animateCss("slideInRight", function() {
+            $("#indexPage").animateCss("slideInRight", function () {
               showIndexPage();
             });
           });
         } else {
           $("#wrapper").css("background-color", "black");
           removeArrows();
-          $("#indexPage").animateCss("slideOutLeft", function() {
+          $("#indexPage").animateCss("slideOutLeft", function () {
             x.style.visibility = "hidden";
             $("#arrLeft").css("visibility", "visible");
             $("#arrLeft").animateCss("fadeIn");
@@ -117,16 +119,16 @@ function setArrowChoice(e) {
       case "arrLeft":
         if (back) {
           video.pause();
-          $("#vidcontainer").animateCss("fadeOut", function() {
+          $("#vidcontainer").animateCss("fadeOut", function () {
             $("#vidcontainer").css("display", "none");
           });
-          $("#indexPage").animateCss("slideInLeft", function() {
+          $("#indexPage").animateCss("slideInLeft", function () {
             showIndexPage();
           });
         } else {
           $("#wrapper").css("background-color", "black");
           removeArrows();
-          $("#indexPage").animateCss("slideOutRight", function() {
+          $("#indexPage").animateCss("slideOutRight", function () {
             x.style.visibility = "hidden";
             $("#arrRight").css("visibility", "visible");
             $("#arrRight").animateCss("fadeIn");
@@ -142,21 +144,22 @@ function setArrowChoice(e) {
       case "arrDown":
         if (back) {
           video.pause();
-          $("#vidcontainer").animateCss("fadeOut", function() {
+          $("#vidcontainer").animateCss("fadeOut", function () {
             $("#vidcontainer").css("display", "none");
           });
-          $("#indexPage").animateCss("slideInUp", function() {
+          $("#indexPage").animateCss("slideInUp", function () {
             showIndexPage();
           });
         } else {
           $("#wrapper").css("background-color", "#c9dfd3");
           removeArrows();
-          $("#indexPage").animateCss("slideOutUp", function() {
+          $("#indexPage").animateCss("slideOutUp", function () {
             x.style.visibility = "hidden";
             $("#arrUp").css("visibility", "visible");
             $("#arrUp").animateCss("fadeIn");
             $("#bio-page").css("display", "block");
             $("#bio-page").animateCss("fadeIn");
+            $("#wrapper").css("overflow", "auto");
           });
           back = true;
           home_return = false;
@@ -164,10 +167,10 @@ function setArrowChoice(e) {
         break;
       case "arrUp":
         if (back) {
-          $("#bio-page").animateCss("fadeOut", function() {
+          $("#bio-page").animateCss("fadeOut", function () {
             $("#bio-page").css("display", "none");
           });
-          $("#indexPage").animateCss("slideInDown", function() {
+          $("#indexPage").animateCss("slideInDown", function () {
             showIndexPage();
           });
         }
@@ -203,32 +206,32 @@ function removeArrows() {
 }
 
 // Removes autoplay attribute for safari with a width below 800 pixels.
-$().ready(function() {
-  setInterval(function() {
+$().ready(function () {
+  setInterval(function () {
     if (!back) {
       if (slide_num == 0) {
-        $("#bg").animateCss("fadeOut", function() {
+        $("#bg").animateCss("fadeOut", function () {
           $("#bg").css("display", "none");
           $("#bg1").css("display", "block");
           $("#bg1").animateCss("fadeIn");
         });
         slide_num = 1;
       } else if (slide_num == 1) {
-        $("#bg1").animateCss("fadeOut", function() {
+        $("#bg1").animateCss("fadeOut", function () {
           $("#bg1").css("display", "none");
           $("#bg2").css("display", "block");
           $("#bg2").animateCss("fadeIn");
         });
         slide_num = 2;
       } else if (slide_num == 2) {
-        $("#bg2").animateCss("fadeOut", function() {
+        $("#bg2").animateCss("fadeOut", function () {
           $("#bg2").css("display", "none");
           $("#bg3").css("display", "block");
           $("#bg3").animateCss("fadeIn");
         });
         slide_num = 3;
       } else {
-        $("#bg3").animateCss("fadeOut", function() {
+        $("#bg3").animateCss("fadeOut", function () {
           $("#bg3").css("display", "none");
           $("#bg").css("display", "block");
           $("#bg").animateCss("fadeIn");
@@ -239,9 +242,9 @@ $().ready(function() {
   }, 7000);
 
   var screenWidth = $(window).width();
-  screenWidth < 800 && isSafari
-    ? $("#myVideo").attr("autoplay")
-    : $("#myVideo").removeAttr("autoplay");
+  screenWidth < 800 && isSafari ?
+    $("#myVideo").attr("autoplay") :
+    $("#myVideo").removeAttr("autoplay");
 });
 
 if (document.documentMode || /Edge/.test(navigator.userAgent)) {
@@ -289,7 +292,7 @@ function showSlides(n) {
 }
 
 // Crop column height based on screen size change.
-$(window).on("resize", function() {
+$(window).on("resize", function () {
   resizeCol();
 });
 

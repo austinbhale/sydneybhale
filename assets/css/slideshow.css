@@ -91,6 +91,11 @@
     top: 30%;
     position: relative;
   }
+
+  .prev,
+  .next {
+    font-size: 2em;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1025px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
@@ -111,6 +116,7 @@
 }
 
 @supports not (-webkit-overflow-scrolling: touch) {
+
   /* NOT IOS DEVICES */
   @media only screen and (max-width: 824px) and (orientation: landscape) {
     #slideshow {
